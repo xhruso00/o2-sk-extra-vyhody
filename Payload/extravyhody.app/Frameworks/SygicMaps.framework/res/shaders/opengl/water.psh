@@ -1,0 +1,46 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	u_sTexture0; // wavemap
+
+uniform vec4		u_vSpecularColor;
+uniform vec3		u_vNormalizedLightDir;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2		v_vTex0UV;
+varying vec2		v_vTex1UV;
+varying vec2		v_vTex2UV;
+varying vec2		v_vTex3UV;
+varying vec4		v_vColor;
+varying vec3		v_vVertexDir;
+
+// ------- FUNCTIONS ------- 
+
+vec4 getNoise(){
+    vec4 noise = (texture2D(u_sTexture0, v_vTex0UV)) +
+                 (texture2D(u_sTexture0, v_vTex1UV)) +
+                 (texture2D(u_sTexture0, v_vTex2UV)) +
+                 (texture2D(u_sTexture0, v_vTex3UV));
+    return noise*0.5-1.0;
+}
+
+void main(void)
+{
+	vec4 vColor = v_vColor;
+
+	vec4 vNoise = getNoise();
+	vec3 vNormal = normalize(vNoise.xzy*vec3(2.0, 1.0, 2.0));
+	
+	// Compute reflection vector
+	vec3 vReflection = normalize(reflect(u_vNormalizedLightDir, vNormal));
+	
+	// Compute R.V
+	float rDotR = max(0.0, dot(vReflection,normalize(v_vVertexDir)) );
+	// Compute specular term
+	vec4 vSpecular = u_vSpecularColor * pow(rDotR, 50.0);
+
+	// Compute diffuse power
+	float fDiffuse = 0.4 * max( 0.0, dot(vNormal,u_vNormalizedLightDir) );
+	float fAmbient = 0.8;
+
+	gl_FragColor = vColor*(fAmbient + fDiffuse) + vSpecular;
+}

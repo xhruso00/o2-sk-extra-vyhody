@@ -1,0 +1,61 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	hu_sSceneTexture0; // pass2 (red)
+uniform sampler2D	hu_sSceneTexture1; // pass1 (blue)
+uniform sampler2D	hu_sDepthTexture0;
+uniform vec4		hu_vCameraNearFar;
+uniform mat4		hu_mPIMatrix;
+
+uniform vec4		u_vAlphaDistanceFunction;
+uniform vec4		u_vAlphaDistanceFunctionOutline;
+uniform vec4		u_vOutlineColor;
+uniform float		u_fMaxDistance;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2		v_vTex0UV;
+varying vec2		v_vUV0;
+varying vec2		v_vUV1;
+varying vec2		v_vUV2;
+varying vec2		v_vUV3;
+
+// ------- FUNCTIONS ------- 
+
+void main(void)
+{
+	vec4 f = vec4(0.0);
+
+	vec4 f1 = texture2D(hu_sSceneTexture1, v_vTex0UV);
+	if (f1.b < 0.99)
+	{
+		vec4 f2 = texture2D(hu_sSceneTexture0, v_vTex0UV);
+		if (f2.r < 0.99)
+ 		{
+			float_hp fDist = GetDistanceFromEye(hu_sDepthTexture0, v_vTex0UV, hu_mPIMatrix);
+
+  			bool b1 = f1.a == texture2D(hu_sSceneTexture1, v_vUV0).a && f1.a == texture2D(hu_sSceneTexture1, v_vUV1).a && 
+  				f1.a == texture2D(hu_sSceneTexture1, v_vUV2).a && f1.a == texture2D(hu_sSceneTexture1, v_vUV3).a;
+				
+			bool b2 = f2.a <= texture2D(hu_sSceneTexture0, v_vUV0).a && f2.a <= texture2D(hu_sSceneTexture0, v_vUV1).a && 
+				f2.a <= texture2D(hu_sSceneTexture0, v_vUV2).a && f2.a <= texture2D(hu_sSceneTexture0, v_vUV3).a;
+
+			bool inside = (b2 || !b1);
+			vec4 func = inside ? u_vAlphaDistanceFunction : u_vAlphaDistanceFunctionOutline;
+			f.a = GetGrowingValue(func, fDist);
+			f.rgb = inside ? f2.rgb : u_vOutlineColor.rgb;
+			f.a = inside ? f.a : u_vOutlineColor.a * f.a;
+
+			float fBlendFromMax = 0.1; // 10% from max distance
+			float fDistToMax = u_fMaxDistance - fDist;
+			if (fDistToMax < 0.0)
+			{
+				f.a = 0.0;
+			}
+			else if (fDist > (1.0 - fBlendFromMax)*u_fMaxDistance)
+			{
+				f.a *= fDistToMax/(fBlendFromMax*u_fMaxDistance);
+			}
+		}
+	}
+
+	gl_FragColor = f;
+}

@@ -1,0 +1,60 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	u_tColors;
+//uniform float		u_fWidth;
+
+uniform float		hu_fSin11;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2		v_vTex0UV;
+varying vec2		v_vColorUV;
+varying vec2		v_vColorUV2;
+varying float		v_fWidth;
+
+// ------- FUNCTIONS ------- 
+
+void main(void)
+{	
+	vec4 vColor;
+
+	float linewidth = v_fWidth;
+	float antialias = clamp(v_fWidth/8.0, 0.5, 4.0);
+	vec4 colBorder = texture2D(u_tColors, v_vColorUV);
+	vec4 colBody = texture2D(u_tColors, v_vColorUV2);
+	float fCoef = 3.0;
+
+	float t = linewidth/2.0 - antialias; // distance from line center to pixel where AA starts
+	float dd = abs(2.0*v_vTex0UV.x - 1.0); // [0.0, 1.0] -> abs[-1.0, 1.0]
+	float d = 0.5*linewidth*dd; // distance from center to current pixel
+
+	// Antialias test
+	d -= t; // distance from pixel to line where AA starts
+	if (d < 0.0)
+	{	// inner
+		if (d > -antialias)
+		{	
+			vColor = colBorder;
+		}
+		else
+		{	// body
+			vColor = colBorder;
+
+			//if (hu_fSin11 > 0.0)
+			{
+				if (d + t < antialias)
+				{
+					d += t;
+					d /= antialias;
+					vColor = mix(colBorder, colBody, exp(-fCoef*d*d));
+				}
+			}
+		}
+	}
+	else
+	{	// outer
+		d /= antialias;
+		vColor = vec4(colBorder.rgb, exp(-fCoef*d*d)*colBorder.a);
+	}
+
+	gl_FragColor = vColor;
+}

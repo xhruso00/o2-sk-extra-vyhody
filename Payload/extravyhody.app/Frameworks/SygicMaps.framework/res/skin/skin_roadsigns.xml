@@ -1,0 +1,67 @@
+<skin>
+  <map>
+    <roadSign>
+      <fonts>
+        <object name="icon.font" type="Library::CFont">
+          <font_name value="roadsigns"/>
+          <size value="22"/>
+          <hinting value="false"/>
+        </object>
+        <object name="sign.font" type="Library::CFont">
+          <font_name value="bold"/>
+          <size value="8"/>
+        </object>
+        <object name="icon.textstyle" type="Library::CTextStyle">
+          <font value="map/roadSign/fonts/icon.font"/>
+          <border_size value="0.0"/>
+          <color value="0xFFFFFFFF"/>
+          <color_border value="0xFFFFFFFF"/>
+        </object>
+        <object name="sign.textstyle" type="Library::CTextStyle">
+          <font value="map/roadSign/fonts/sign.font"/>
+          <border_size value="0.0"/>
+          <color value="0xFFFFFFFF"/>
+          <color_border value="0xFFFFFFFF"/>
+        </object>
+      </fonts>
+      <object name="string.rect_glyph" type="Library::CStringResource">
+        <string value="U+E090"/>
+      </object>
+      <colors>
+        <object name="color.black" type="Library::CColor">
+          <color value="0x000000FF"/>
+        </object>
+        <object name="color.white" type="Library::CColor">
+          <color value="0xFFFFFFFF"/>
+        </object>
+        <object name="color.greenE" type="Library::CColor">
+          <color value="0x3abc00FF"/>
+        </object>
+        <object name="color.greenA" type="Library::CColor">
+          <color value="0x007e00FF"/>
+        </object>
+        <object name="color.blue" type="Library::CColor">
+          <color value="0x1f77ffFF"/>
+        </object>
+        <object name="color.blueNavy" type="Library::CColor">
+          <color value="0x000080FF"/>
+        </object>
+        <object name="color.blueMex" type="Library::CColor">
+          <color value="0x00C9FFFF"/>
+        </object>
+        <object name="color.red" type="Library::CColor">
+          <color value="0xF24A1CFF"/>
+        </object>
+        <object name="color.yellow" type="Library::CColor">
+          <color value="0xFFFF00FF"/>
+        </object>
+        <object name="color.orange" type="Library::CColor">
+          <color value="0xFF0800FF"/>
+        </object>
+        <object name="color.brown" type="Library::CColor">
+          <color value="0x804000FF"/>
+        </object>
+      </colors>
+    </roadSign>
+  </map>
+</skin>

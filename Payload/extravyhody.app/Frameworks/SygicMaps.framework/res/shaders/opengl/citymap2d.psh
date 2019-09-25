@@ -1,0 +1,18 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	u_tColors;
+uniform vec4		u_vAlphaDistanceFunction;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2		v_vColorCoord;
+varying float		v_fDistToCamera;
+
+// ------- FUNCTIONS -------
+
+void main(void)
+{
+	vec3 vColor = texture2D(u_tColors, v_vColorCoord).rgb;
+
+	float a = GetGrowingValue(u_vAlphaDistanceFunction, v_fDistToCamera);
+	gl_FragColor = vec4(vColor, a);
+}

@@ -1,0 +1,26 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	hu_sDepthTexture0;
+uniform sampler2D	hu_sSceneTexture0;
+uniform vec2		hu_vDimsTexture0;
+uniform sampler2D	u_tColors;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying float		v_fTex0U;
+varying vec2		v_vColorCoord;
+
+// ------- FUNCTIONS -------
+
+void main(void)
+{
+	// depth peeling
+	vec2 st = vec2(gl_FragCoord.x/hu_vDimsTexture0.x, gl_FragCoord.y/hu_vDimsTexture0.y);
+	float fFrontDepth = texture2D(hu_sDepthTexture0, st).r;
+	float fBuildingID = texture2D(hu_sSceneTexture0, st).a;
+	if (gl_FragCoord.z <= fFrontDepth || abs(fBuildingID - v_fTex0U) < 0.001)
+	{
+		discard;
+	}
+
+	gl_FragColor = vec4(texture2D(u_tColors, v_vColorCoord).rgb, v_fTex0U);
+}

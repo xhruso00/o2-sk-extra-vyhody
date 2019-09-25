@@ -1,0 +1,245 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="common/sdk.js"></script>
+<style>
+body {overflow:hidden; padding:0px; margin:0px;}
+a { cursor: pointer; color: blue; }
+a:hover,a.hover { text-decoration:underline; text-decoration-skip: ink; }
+.ontop {padding-left:10px; padding-top:10px; position:absolute; top:0px; width:100%; background:rgba(200, 200, 200, 0.95); z-index:4}
+table {
+    border: 1px solid #b0b0b0;
+}
+td {
+    border: 1px solid #f0f0f0;
+    white-space: nowrap;
+}
+#response {
+  position:absolute;
+  top:0px;
+  bottom:0px;
+  width:100%;
+  overflow-y: scroll;
+/*  overflow:scroll;*/
+  padding-right:10px;
+  padding-left:10px;
+}
+#response i:before {
+ list-style-type: none;
+ content: "< ";
+}
+#response i {
+ font-style: normal; 
+ color:#00b000;
+}
+</style>
+</head>
+<body>
+<div class="ontop">
+<a class="action">OnlineMaps.Disable();</a>
+<a class="action">OnlineMaps.Enable();</a>
+<a class="action">OnlineMaps.Clear();</a>
+<br>
+Regiony: <a class="action">MapLoader.GetMapGroups();</a>
+Europa: <a class="action">MapLoader.GetMapPackagesForGroup(4910);</a>
+Offline mapy: <a class="action">MapLoader.GetInstalledMapPackages();</a>
+Vsetky mapy: <a class="action">MapLoader.DebugMapPackages();</a>
+<br>
+<table>
+<tr><td></td><td>Download</td><td>Load</td><td>Unload</td><td>Uninstall</td></tr>
+<tr><td>Slovensko</td>
+  <td><a class="actionMapLoader">.InstallMapPackage("4955");</a></td>
+  <td><a class="actionMapLoader">.LoadMapPackage(["4955"]);</a></td>
+  <td><a class="actionMapLoader">.UnloadMapPackage(["4955"]);</a></td>
+  <td><a class="actionMapLoader">.UninstallMapPackage("4955");</a></td>
+</tr>
+<tr><td>Cesko</td>
+  <td><a class="actionMapLoader">.InstallMapPackage("4928");</a></td>
+  <td><a class="actionMapLoader">.LoadMapPackage(["4928"]);</a></td>
+  <td><a class="actionMapLoader">.UnloadMapPackage(["4928"]);</a></td>
+  <td><a class="actionMapLoader">.UninstallMapPackage("4928");</a></td>
+</tr>
+</table>
+Vymaz vsetky online/offline mapy: <a class="function">UnloadAll();</a>
+Vymaz vsetky offline mapy: <a class="function">UninstallOffline();</a>
+| <a class="function">InstallCssr();</a>
+| <a class="function">Install("Slovakia");</a>
+| <a class="function">Crash1();</a><br>
+<a class="action">Traffic.Enable();</a> |
+<a class="action">Traffic.Disable();</a> |
+</div>
+<div id="response">
+<br><br><br><br>
+<br><br><br><br>
+<br><br>
+</div>
+
+<script type="text/javascript">
+
+$('.actionMapLoader').click(function(){ send("MapLoader"+$(this).html()+"\n"); });
+$('.action').click(function(){ send($(this).html()+"\n"); });
+$('.function').click(function(){ eval($(this).html()); });
+
+setTimeout(Sdk.Connect, 150);
+
+getKeyByValue = (object, value) => Object.keys(object).find(key => object[key] === value);
+getKeyByTitle = (object, value) => Object.keys(object).find(key => object[key].title === value);
+sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+function tableKV(id, json)
+{
+  var q = "<table><tr><td colspan=2><b>"+id+"</b></td></td>";
+  for (var i in json)
+    q += "<tr><td>"+i+"</td><td>"+json[i]+"</td></tr>";
+  q += "</table>";
+  return q;
+}
+
+function fieldToString(o)
+{
+  if (typeof(o) != "object")
+    return o;
+
+  var s = o.toString();
+  if (s.length > 40)
+    s = "..." + s.substr(-37);
+  return s;
+}
+
+function table(id, json, filter)
+{
+  var k = [];
+  for (var i in json[0])
+    k.push(i);
+
+  var q = "<table><tr><td colspan="+k.length+"><b>"+id+"</b></td></td>";
+  q += "<tr>";
+  for (var i in k)
+    q += "<td><b>"+k[i]+"</b></td>";
+  q += "</tr>";
+  
+  for (var i in json)
+  {
+    q += "<tr>";
+    for (var j in json[i])
+    {
+      var s = filter && filter[j] ? filter[j](json[i][j]) : json[i][j].toString();
+      q += "<td>"+s+"</td>";
+    }
+    q += "</tr>";
+  }
+  q += "</table>";
+  return q;
+}
+
+function jsonToObject(json)
+{                     
+  if (typeof(json) != "Object")
+    return json;
+
+  var out = [];
+  for (var i in json)
+   out[i] = jsonToObject(json[i]);
+}
+
+function append(html)
+{
+    $("#response").append(html);
+    $('#response').animate({scrollTop: $('#response').prop("scrollHeight")}, 500);
+}
+
+function send(cmd)
+{
+  console.log("< "+cmd);
+  append("<i>"+cmd+"</i><br>");
+  Send(cmd);
+}
+
+_handlersLog = {
+  mapLoader: {
+    mapGroupsLoaded: (json) => append(tableKV("mapGroupsLoaded",json)+"<br>"),
+    mapPackagesLoaded: (json) => append(table("mapPackagesLoaded", json)+"<br>"),
+    mapInstallFinished: (json) => append("mapInstallFinished="+JSON.stringify(json)+"<br>"),
+    mapUninstallFinished: (json) => append("mapUninstallFinished="+JSON.stringify(json)+"<br>"),
+    installedMapPackages: (json) => { json = jsonToObject(json); append(table("installedMapPackages",json,{files:(arr)=>arr.length ? "..."+arr[0].substr(-40) : ""})+"<br>") },
+  },
+  success: () => append("<span style='color:green'>ok</span><br>"),
+  failure: () => append("<span style='color:red'>Error</span><br>"),
+  trafficAdded: () => {},
+  routeAvailable: () => {},
+  send: (cmd) => { console.log("< "+cmd);  append("<i>"+cmd+"</i><br>"); }
+};
+
+function UnloadAll()
+{
+  return Sdk.OnlineMaps.Disable()
+    .then( () => Sdk.OnlineMaps.Clear() )
+    .then( () => UninstallOffline() );
+}
+
+function UninstallOffline()
+{
+  return Sdk.MapLoader.GetInstalledPackages()
+    .then( (array) => {
+      var p = Promise.resolve();
+      array.forEach(pack => p = p.then( () => Sdk.MapLoader.UninstallMapPackage(pack.id) ));
+      return p;
+    });
+}
+
+function InstallCssr()
+{
+  Sdk.MapLoader.GetMapGroups()
+    .then( (groups) => Sdk.MapLoader.GetMapPackagesForGroup(
+      Object.keys(groups).find(key => groups[key] === "Europe")
+     ) )
+    .then( (packages) => 
+     {
+       var idSvk = packages[Object.keys(packages).find(key => packages[key].title === "Slovakia")].id;
+       var idCze = packages[Object.keys(packages).find(key => packages[key].title === "Czech republic")].id;
+
+       return         Sdk.MapLoader.InstallMapPackage(idSvk)
+         .then( () => Sdk.MapLoader.InstallMapPackage(idCze) )
+         .then( () => Sdk.MapLoader.LoadMapPackage(idSvk) )
+         .then( () => Sdk.MapLoader.LoadMapPackage(idCze) );
+     })
+    .then( (done) => append("<span style='color:green'>Done!</span><br>") );
+}
+
+function Install(country)
+{
+  Sdk.MapLoader.GetMapGroups()
+    .then( (groups) => Sdk.MapLoader.GetMapPackagesForGroup(
+      Object.keys(groups).find(key => groups[key] === "Europe")
+     ) )
+    .then( (packages) => 
+     {
+       var id = packages[Object.keys(packages).find(key => packages[key].title === country)].id;
+
+       return         Sdk.MapLoader.InstallMapPackage(id)
+         .then( () => Sdk.MapLoader.LoadMapPackage(id) );
+     })
+    .then( (done) => append("<span style='color:green'>Done!</span><br>") );
+}
+function Crash1()
+{
+  return Sdk.MapLoader.GetInstalledPackages()
+    .then( (array) => {
+      var found = array.find(obj => obj.title == "Slovakia");
+      if (!found)
+      {
+        append("<span style='color:red'>Nemas nainstalovane slovensko!</span><br>");
+        return;
+      } else
+        return Promise.resolve()
+          .then( () => Sdk.MapLoader.LoadMapPackage(found.id) )
+          .then( () => sleep(500) )
+          .then( () => Sdk.MapLoader.LoadMapPackage(found.id) )
+          .then( () => sleep(500) )
+          .then( () => append("<span style='color:green'>Done!</span><br>") );
+    });
+}
+
+</script>
+</body>
+</html>

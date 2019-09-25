@@ -1,0 +1,4539 @@
+<skin>
+  <map>
+    <roadSign>
+      <object name="roadSignSettings" type="CRoadSignSettings">
+        <defaultRules type="DtCustom::std::vector">
+            <data>
+              <prefix value="NONE"/>
+              <official value="NONE"/>
+              <textColor value="ESignColor::White"/>
+              <shapes>
+                <data>
+                  <shape value="RECT"/>
+                  <color value="ESignColor::Blue"/>
+                </data>
+                <data>
+                  <shape value="RECT"/>
+                  <color value="ESignColor::White"/>
+                </data>
+                <data>
+                  <shape value="RECT"/>
+                  <color value="ESignColor::Blue"/>
+                </data>
+              </shapes>
+              <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+            </data>
+        </defaultRules>
+        <rules type="DtCustom::std::map">
+          <data>
+            <key value="ALB"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+				        <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="AND"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRect"/>
+              </data>
+              <data>
+                <prefix value="CG-"/>
+                <official value="CG-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedRect"/>
+              </data>
+              <data>
+                <prefix value="CS-"/>
+                <official value="CS-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERect"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="ARE"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::Yellow"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E005"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueShape1"/>
+              </data>
+              <data>
+                <prefix value="D|S|F"/>
+                <official value="D|S|F"/>
+                <textColor value="ESignColor::Yellow"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenEShape3"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::BlueNavy"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::BlueNavy"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueNavyRect"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="AUS"/>
+            <value>
+              <data>
+                <prefix value="NONE|NONE"/>
+                <official value="A|I "/>
+                <textColor value="ESignColor::Yellow"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E00D"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>                  
+                  <data>
+                    <shape value="U+E00E"/>
+                    <color value="ESignColor::GreenA"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenAShape4"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="N"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E00D"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E00E"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlackShape11WhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="N"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E041"/>
+                    <color value="ESignColor::White"/>
+                  </data>                  
+                  <data>
+                    <shape value="U+E040"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueShape5"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="X|F"/>
+                <textColor value="ESignColor::BlueNavy"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::BlueNavy"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteShape12BlueNavyBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="S"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueShape5"/>
+              </data>
+              <data>
+                <prefix value="M"/>
+                <official value="MI"/>
+                <textColor value="ESignColor::Yellow"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenA"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenA"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowShape13GreenABorder"/>
+              </data>
+              <data>
+                <prefix value="M"/>
+                <official value="M"/>
+                <textColor value="ESignColor::Yellow"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenA"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenA"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenARect"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="AI "/>
+                <textColor value="ESignColor::Yellow"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenA"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenA"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowShape13GreenABorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::Yellow"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenA"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenA"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenARect"/>
+              </data>
+              <data>
+                <prefix value="B"/>
+                <official value="B"/>
+                <textColor value="ESignColor::Yellow"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenA"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenA"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenARect"/>
+              </data>
+              <data>
+                <prefix value="C"/>
+                <official value="C"/>
+                <textColor value="ESignColor::Yellow"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenA"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenA"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenARect"/>
+              </data>
+              <data>
+                <prefix value="T"/>
+                <official value="T"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E042"/>
+                    <color value="ESignColor::White"/>
+                  </data>                  
+                  <data>
+                    <shape value="U+E043"/>
+                    <color value="ESignColor::Brown"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BrownShape7"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="AUT"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="S"/>
+                <official value="S"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="B"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRect"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="BEL"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="R"/>
+                <official value="R"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="N"/>
+                <official value="N"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="BGR"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="BIH"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="BLR"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="CAN"/>
+            <value>
+              <data>
+                <prefix value="NONE|NONE"/>
+                <official value="TRANS-CANADA|TC-"/>
+                <textColor value="ESignColor::GreenE"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E050"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E051"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteShape14GreenEBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE"/>
+                <official value="AUT-|AUT"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E054"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E056"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="U+E055"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRedCanShape"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE|NONE"/>
+                <official value="KINGS HWY|HWY-|HWY"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E05F"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E060"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteShape15BlackBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE"/>
+                <official value="AB-|BC-|MB-|NB-|NL-|NS-|NT-|NU-|ON-|PE-|QC-|SK-|YT-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E052"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E052"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteShape15BlackBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE|NONE"/>
+                <official value="County Rd-|Regional Rd-|City Rte-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E05B"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E05B"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteShape15BlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="CHE"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E02C"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E008"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedShape8"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="CHN"/>
+            <value>
+              <data>
+                <prefix value="G"/>
+                <official value="G"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="S"/>
+                <official value="S"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="X"/>
+                <official value="X"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::GreenE"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectGreenEBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="CZE"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="D"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="DEU"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E009"/>
+                    <color value="ESignColor::White"/>
+                  </data>                  
+                  <data>
+                    <shape value="U+E00A"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueShape6"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="B"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="St"/>
+                <official value="St"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="L"/>
+                <official value="L"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="K"/>
+                <official value="K"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="DNK"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="O"/>
+                <official value="Ring"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="ESP"/>
+            <value>
+              <data>
+                <prefix value="E-|AV-"/>
+                <official value="E-|AV-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A-|AP-|M-|NONE"/>
+                <official value="A-|AP-|M-|2T-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="N-|NONE"/>
+                <official value="N-|3T-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="C-|NONE"/>
+                <official value="C-|4T-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRect"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="5T-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenA"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenARectGreenEBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="6T-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRect"/>
+              </data>
+              <data>
+                <prefix value="BV-"/>
+                <official value="BV-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="B-"/>
+                <official value="B-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="CV-"/>
+                <official value="CV-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="TE-|GR-"/>
+                <official value="TE-|GR-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRect"/>
+              </data>
+              <data>
+                <prefix value="SO-"/>
+                <official value="SO-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="CL-"/>
+                <official value="CL-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Orange"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Orange"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::OrangeRect"/>
+              </data>
+              <data>
+                <prefix value="V-"/>
+                <official value="V-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRect"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="EST"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE"/>
+                <official value="NONE|2T-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE"/>
+                <official value="NONE|3T-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE"/>
+                <official value="NONE|4T-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="FIN"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE"/>
+                <official value="NONE|2T-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE"/>
+                <official value="NONE|3T-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE"/>
+                <official value="NONE|4T-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE"/>
+                <official value="NONE|5T-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectBlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="FRA"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedShape9"/>
+              </data>
+              <data>
+                <prefix value="N"/>
+                <official value="N"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>      
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>                  
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedShape10"/>
+              </data>
+              <data>
+                <prefix value="D"/>
+                <official value="D"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRect"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="GBR"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::Yellow"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERect"/>
+              </data>
+              <data>
+                <prefix value="M"/>
+                <official value="M"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A|B"/>
+                <official value="A|B"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRect"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="GRC"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="HRV"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E00F"/>
+                    <color value="ESignColor::White"/>
+                  </data>                  
+                  <data>
+                    <shape value="U+E010"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenEShape6"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRectBlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="HUN"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="M"/>
+                <official value="M"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E005"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E006"/>
+                    <color value="ESignColor::BlueNavy"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueNavyShape2"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E005"/>
+                    <color value="ESignColor::White"/>
+                  </data>                  
+                  <data>
+                    <shape value="U+E006"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenEShape2"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="IRL"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="M"/>
+                <official value="M"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::BlueNavy"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::BlueNavy"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueNavyRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="N"/>
+                <official value="N"/>
+                <textColor value="ESignColor::Yellow"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERect"/>
+              </data>
+              <data>
+                <prefix value="R"/>
+                <official value="R"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRect"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="ITA"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E014"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E015"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenEShape16WhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="SS"/>
+                <official value="SS"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="RA"/>
+                <official value="RA"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NSA"/>
+                <official value="NSA"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="exSS"/>
+                <official value="exSS"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="SR"/>
+                <official value="SR"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="SP"/>
+                <official value="SP"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueShape17WhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="SPex"/>
+                <official value="SPex"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="SC"/>
+                <official value="SC"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteShape17BlackBorder"/>
+              </data>
+              <data>
+                <prefix value="T"/>
+                <official value="T"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenEShape18WhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="LIE"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E016"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="U+E016"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E017"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedShape8"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE"/>
+                <official value="NONE|3T-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="LTU"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE"/>
+                <official value="NONE|3T-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE"/>
+                <official value="NONE|4T-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="LUX"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="N"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedRect"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="CR"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRect"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="LVA"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="P"/>
+                <official value="P"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRect"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="MCO"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E018"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="U+E018"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E019"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedShape10"/>
+              </data>
+              <data>
+                <prefix value="N"/>
+                <official value="N"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E018"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E019"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedShape10"/>
+              </data>
+              <data>
+                <prefix value="D"/>
+                <official value="D"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E018"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E019"/>
+                    <color value="ESignColor::Orange"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowShape18BlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="MDA"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="MKD"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="MEX"/>
+            <value>
+              <data>
+                <prefix value="NONE"/>
+                <official value="MEX-"/>
+                <textColor value="ESignColor::Red"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E080"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="U+E081"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedMexShape"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE|NONE"/>
+                <official value="AGS-|BC-|BCS-|CAMP-|CHIS-|CHIH-|COAH-|COL-|DGO-|EST-|FED-|GTO-|GRO-|HGO-|JAL-|MICH-|MOR-|NAY-|NL-|OAX-|PUE-|QRO-|QR-|SLP-|SIN-|SON-|TAB-|TAMS-|TLAX-|VER-|YUC-|ZAC-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E080"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E080"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedMexShape"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="NLD"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedRect"/>
+              </data>
+              <data>
+                <prefix value="N"/>
+                <official value="N"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRect"/>
+              </data>
+              <data>
+                <prefix value="s"/>
+                <official value="s"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E01E"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E01F"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteShape20BlackBorder"/>
+              </data>
+              <data>
+                <prefix value="r"/>
+                <official value="r"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Brown"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Brown"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BrownRect"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="NOR"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE"/>
+                <official value="NONE|2T-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="RING"/>
+                <official value="RING"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="R"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectBlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="POL"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A|S"/>
+                <official value="A|S"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRectBlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="PRT"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A|IP|IC"/>
+                <official value="A|IP|IC"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="IP"/>
+                <official value="IP"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="IC"/>
+                <official value="IC"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="N"/>
+                <official value="N"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="R|ER"/>
+                <official value="R|ER"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="EM"/>
+                <official value="EM"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectYellowBorder"/>
+              </data>
+              <data>
+                <prefix value="CM"/>
+                <official value="CM"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="ROU"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="DN"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="DJ"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="RUS"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="M"/>
+                <official value="M"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="P"/>
+                <official value="P"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="M|A|P"/>
+                <official value="M|A|P"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="SAU"/>
+            <value>
+              <data>
+                <prefix value="NONE"/>
+                <official value="M"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+			  <data>
+                <prefix value="????"/>
+                <official value="????"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+			  <data>
+                <prefix value="???"/>
+                <official value="???"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E026"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="U+E027"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenESauShape3"/>
+              </data>
+			  <data>
+                <prefix value="??"/>
+                <official value="??"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E022"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E023"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenESauShape1"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="MNE"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="SMR"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E014"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E015"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenEShape16WhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="SS"/>
+                <official value="SS"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E014"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E015"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueShape17WhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="SR"/>
+                <official value="SR"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E014"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E015"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueShape17WhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="SP"/>
+                <official value="SP"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E014"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E015"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueShape17WhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="SC|Intc."/>
+                <official value="SC|Intc."/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E014"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E015"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteShape17BlackBorder"/>
+              </data>
+              <data>
+                <prefix value="T"/>
+                <official value="T"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E014"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E015"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenEShape18WhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="SVK"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="D"/>
+                <official value="D"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="SVN"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E02A"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="U+E02A"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E02B"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenEShape6"/>
+              </data>
+              <data>
+                <prefix value="H"/>
+                <official value="H"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowRectBlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="SWE"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::BlueNavy"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::BlueNavy"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueNavyRectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="THA"/>
+            <value>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="TUR"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="O"/>
+                <official value="O"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E02C"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E02D"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedShape6"/>
+              </data>
+              <data>
+                <prefix value="D|NONE"/>
+                <official value="D|NONE"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="UKR"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="USA"/>
+            <value>
+              <data>
+                <prefix value="NONE|NONE|NONE"/>
+                <official value="I-|A-|H-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E072"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E074"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="U+E073"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::USAShield"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE"/>
+                <official value="US-|US"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E070"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E071"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteShape21BlackBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE|NONE"/>
+                <official value="HWY|??-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E075"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E076"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteShape22BlackBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="County Hwy-"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteRectBlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="VAT"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="A"/>
+                <official value="A"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E014"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E015"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenEShape16WhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="SS"/>
+                <official value="SS"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E014"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E015"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueShape17WhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="SR"/>
+                <official value="SR"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E014"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E015"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueShape17WhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="SP"/>
+                <official value="SP"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E014"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E015"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueShape17WhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="SC|Intc."/>
+                <official value="SC|Intc."/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E014"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E015"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteShape17BlackBorder"/>
+              </data>
+              <data>
+                <prefix value="T"/>
+                <official value="T"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E014"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E015"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenEShape18WhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="NZL"/>
+            <value>
+              <data>
+                <prefix value="NONE"/>
+                <official value="S"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E020"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E021"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::RedShape5"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="HKG"/>
+            <value>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E00D"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="U+E00E"/>
+                    <color value="ESignColor::Orange"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::OrangeShape23WhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="MAC"/>
+            <value>
+              <data>
+                <prefix value="S"/>
+                <official value="S"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Orange"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Orange"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::OrangeRect"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="MYS"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E01C"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E01D"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowShape18BlackBorder"/>
+              </data>
+              <data>
+                <prefix value="B"/>
+                <official value="B"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E01C"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E01D"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowShape18BlackBorder"/>
+              </data>
+              <data>
+                <prefix value="M"/>
+                <official value="M"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E01C"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E01D"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowShape18BlackBorder"/>
+              </data>
+              <data>
+                <prefix value="N"/>
+                <official value="N"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E01C"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E01D"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowShape18BlackBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E01C"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E01D"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowShape18BlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="SGP"/>
+            <value>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E028"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E029"/>
+                    <color value="ESignColor::Yellow"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::YellowShape18BlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="SRB"/>
+            <value>
+              <data>
+                <prefix value="E"/>
+                <official value="E"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::GreenERectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="ISR"/>
+            <value>
+              <data>
+                <prefix value="ISR1_"/>
+                <official value="ISR1_"/>
+                <textColor value="ESignColor::BlueMex"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E012"/>
+                    <color value="ESignColor::BlueMex"/>
+                  </data>
+                  <data>
+                    <shape value="U+E013"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteShape24BlueMexBorder"/>
+              </data>
+              <data>
+                <prefix value="ISR2_"/>
+                <official value="ISR2_"/>
+                <textColor value="ESignColor::Red"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E012"/>
+                    <color value="ESignColor::Red"/>
+                  </data>
+                  <data>
+                    <shape value="U+E013"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteShape24RedBorder"/>
+              </data>
+              <data>
+                <prefix value="ISR3_"/>
+                <official value="ISR3_"/>
+                <textColor value="ESignColor::GreenE"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E012"/>
+                    <color value="ESignColor::GreenE"/>
+                  </data>
+                  <data>
+                    <shape value="U+E013"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteShape24GreenEBorder"/>
+              </data>
+              <data>
+                <prefix value="ISR4_"/>
+                <official value="ISR4_"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E012"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E013"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::WhiteShape24BlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="VNM"/>
+            <value>
+              <data>
+                <prefix value="NONE"/>
+                <official value="NONE"/>
+                <textColor value="ESignColor::Black"/>
+                <shapes>
+                  <data>
+                    <shape value="U+E030"/>
+                    <color value="ESignColor::Black"/>
+                  </data>
+                  <data>
+                    <shape value="U+E031"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueShape18BlackBorder"/>
+              </data>
+            </value>
+          </data>
+          <data>
+            <key value="JPN"/>
+            <value>
+              <data>
+                <prefix value="NONE"/>
+                <official value="1T-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+              <data>
+                <prefix value="NONE"/>
+                <official value="2T-"/>
+                <textColor value="ESignColor::White"/>
+                <shapes>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::White"/>
+                  </data>
+                  <data>
+                    <shape value="RECT"/>
+                    <color value="ESignColor::Blue"/>
+                  </data>
+                 </shapes>
+                 <shape value="CRoadSignRule::ENumberShape::BlueRectWhiteBorder"/>
+              </data>
+            </value>
+          </data>
+        </rules>
+      </object>
+    </roadSign>
+  </map>
+</skin>

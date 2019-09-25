@@ -1,0 +1,25 @@
+<skin>
+    <map>
+        <settings>
+            <object name="function.max_tilt_by_distance" type="CLinearFunction">
+                <parent type="CFunctionObject">
+                    <definition>
+                        <x value="90.000000"/>
+                        <y value="0.000000"/>
+                        <z value="5.000000"/>
+                        <w value="6000.000000"/>
+                    </definition>
+                </parent>
+            </object>
+            <object name="zoomLevelRange" type="CZoomLevelRange">
+                <min value="0.0"/>
+                <max value="30.0"/>
+            </object>
+        </settings>
+        <route>
+            <object name="cut_distance_from_vehicle" type="Library::CFloatResource">
+                <float value="-20.0"/>
+            </object>
+        </route>
+    </map>
+</skin>

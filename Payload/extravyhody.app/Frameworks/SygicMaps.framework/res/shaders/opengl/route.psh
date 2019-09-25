@@ -1,0 +1,46 @@
+#ifdef GL_OES_standard_derivatives
+#extension GL_OES_standard_derivatives : enable
+#define OES_standard_derivatives_enabled
+#endif
+
+#preprocess
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform	vec4		u_vColor;
+uniform	vec4		u_vBorderColor;
+uniform	float_hp	u_fBorderSize;
+uniform	float_hp	u_fWaveIntensity;
+uniform	float_hp	u_fCutDistance;
+uniform	float_hp	hu_fFrameTime;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2_hp		v_vTexCoord;
+
+// ------- FUNCTIONS -------
+
+void main(void)
+{
+	vec4 vColor;
+	vec4 vTransparentBorder = vec4(u_vBorderColor.rgb, 0.0);
+
+	float_hp distanceFromCenter = abs(0.5 - v_vTexCoord.x);
+	float_hp wave = abs(mod(v_vTexCoord.y + distanceFromCenter - hu_fFrameTime / 2.0, 5.0)) * u_fWaveIntensity;
+	vec4 vInnerColor = vec4(u_vColor.rgb * (1.0 - u_fWaveIntensity + min(u_fWaveIntensity, wave)), u_vColor.a);
+
+#ifdef OES_standard_derivatives_enabled // simple antialias
+	float dx = dFdx(distanceFromCenter);
+	float dy = dFdy(distanceFromCenter);
+	float lerpSize = length(vec2(dx, dy));
+#else
+	float lerpSize = 0.02;
+#endif
+
+	const float borderStop = 0.5;
+	float borderStart = borderStop - lerpSize - u_fBorderSize;
+	vColor = lerp(vInnerColor, u_vBorderColor, interpolate(distanceFromCenter, borderStart, borderStart + lerpSize));
+	vColor = lerp(vColor, vTransparentBorder, interpolate(distanceFromCenter, borderStop - lerpSize, borderStop));
+	const float cutSize = 0.1;
+	vColor.a *= interpolate(v_vTexCoord.y, u_fCutDistance - cutSize, u_fCutDistance + cutSize);
+
+	gl_FragColor = vColor;
+}

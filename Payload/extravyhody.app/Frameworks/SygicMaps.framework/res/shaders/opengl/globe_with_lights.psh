@@ -1,0 +1,51 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	u_sTexture0; // ambient0
+uniform sampler2D	u_sTexture1; // Earth lights
+uniform sampler2D	u_sTexture2; // specular
+
+uniform vec3		u_vNormalizedLightDir;
+uniform vec4		u_vSpecularColor;
+uniform float		u_fSpecularPower;
+uniform float		u_fSpecularStrength;
+uniform float		u_fEffectsInterpolation;
+
+uniform vec4		u_vColor;
+uniform vec4		u_vColorToTextureInterpolation; // fx of hu_fGroundDistanceInKm
+
+uniform vec3		hu_vNormalizedViewDir;
+uniform float		hu_fGroundDistanceInKm;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2		v_vTexCoord;
+varying vec3		v_vNormal;
+
+// ------- FUNCTIONS ------- 
+
+void main(void)
+{
+	vec4 colBase =			texture2D(u_sTexture0, v_vTexCoord);
+	vec4 colEarthLights =	texture2D(u_sTexture1, v_vTexCoord);
+	vec4 maskSpecular =		texture2D(u_sTexture2, v_vTexCoord);
+	
+	vec3 vNormal = normalize(v_vNormal);
+	
+	// N.L
+	float nDotL = dot(vNormal, u_vNormalizedLightDir); // [0.0, 1.0] away from sun, [-1.0, 0.0] toward sun
+	float f = saturate(-nDotL + 0.1); // 0.0 away from sun, [1.0, 0.0] toward sun
+
+	// Earth lights
+	float fLights = saturate(1.0 - f*12.0);
+	colEarthLights *= fLights;
+	
+	// specular
+	vec3 vReflection = (2.0 * vNormal * nDotL) - u_vNormalizedLightDir;
+	float fDotV = max(0.0, dot(vReflection, hu_vNormalizedViewDir));
+	vec4 vSpecular = u_vSpecularColor * maskSpecular * vec4(pow(fDotV, u_fSpecularPower));
+	vec4 colWithSpecular = f*(colBase + u_fSpecularStrength*vSpecular);
+
+	vec4 col = lerp(colBase, colEarthLights + colWithSpecular, u_fEffectsInterpolation);
+	vec4 col2text = lerp(u_vColor, col, GetGrowingValue(u_vColorToTextureInterpolation, hu_fGroundDistanceInKm));
+
+	gl_FragColor = col2text;
+}

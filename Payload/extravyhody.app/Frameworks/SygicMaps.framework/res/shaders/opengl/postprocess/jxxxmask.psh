@@ -1,0 +1,35 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	hu_sSceneTexture0;
+uniform sampler2D	u_sTexture1; // mask
+uniform vec2		hu_vDimsTexture0;
+//uniform float		hu_fObjectCameraDist;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2		v_vTex0UV;
+
+// ------- FUNCTIONS ------- 
+
+void main(void)
+{
+	vec4 mask, result;
+
+	const float fSquareSize = 10.0;
+	//float fSquareSize = hu_fObjectCameraDist/1000.0;
+	
+	// screen coords
+	vec2 fMod = fSquareSize*floor(gl_FragCoord.xy/fSquareSize) + fSquareSize*0.5;
+	vec2 vUV = fMod/hu_vDimsTexture0;
+	
+	mask = texture2D(u_sTexture1, vUV);
+	if (mask.x > 0.0)
+	{
+		result = texture2D(hu_sSceneTexture0, vUV);
+	}
+	else
+	{
+		result = texture2D(hu_sSceneTexture0, v_vTex0UV);
+	}
+	
+	gl_FragColor = result;
+}

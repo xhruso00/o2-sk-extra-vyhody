@@ -1,0 +1,55 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+//uniform sampler2D	u_sTexture0; // atmosphere
+
+//uniform vec3		u_vNormalizedLightDir;
+uniform float		u_fEffectsInterpolation;
+
+//uniform vec3		hu_vNormalizedViewDir;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+//varying vec2		v_vTex0UV;
+//varying vec3		v_vNormal;
+varying float		v_fAlpha;
+
+// ------- FUNCTIONS ------- 
+
+void main(void)
+{
+	//vec4 vColor = texture2D(u_sTexture0, v_vTex0UV);
+	//vec4 vColor = vec4(0.145, 0.28, 0.56, 1.0);
+	vec4 vColor = vec4(105.0/255.0, 164.0/255.0, (30.0+179.0)/255.0, 1.0);
+	vColor *= v_fAlpha;
+
+	const float fExposure = 2.3;
+    //float g = Atmosphere_G;
+    //float g2 = g * g;
+	
+	//gl_FragColor = u_fEffectsInterpolation*(1.0 - exp((vColor /** (1.0 + v_vTex0UV.y)*/ /*+ mieColor*/) * -fExposure));
+	gl_FragColor = u_fEffectsInterpolation*vColor;
+
+	//const float fExposure = 1.5;
+ //   float g = -0.95;//Atmosphere_G;
+ //   float g2 = g * g;
+
+ //   // atmosphere color
+ //   vec4 diffuse = tex2D(TexSampler, uv);
+ //
+ //   // sun outer color - might could use atmosphere color
+ //   vec4 diffuse2 = tex2D(TexSampler, vec2(min(0.5,uv.x),1));
+
+ //   // this is equivilant but faster than fCos = dot(normalize(lightDir.xyz),normalize(camToPos));
+ //   float fCos = dot(lightDir.xyz,camToPos) * rsqrt( dot(lightDir.xyz,lightDir.xyz) * dot(camToPos,camToPos));
+ //   float fCos2 = fCos * fCos;
+
+ //   // apply alpha to atmosphere
+ //   vec4 diffuseColor = diffuse * alpha;
+ //   
+ //   // sun glow color
+ //   float fMiePhase = 1.5 * ((1.0 - g2) / (2.0 + g2)) * (1.0 + fCos2) /(1.0 + g2 - 2.0*g*fCos);
+ //   vec4 mieColor = diffuse2 * fMiePhase * alpha;
+ // 
+ //   // use exponential falloff because mie color is in high dynamic range
+ //   // boost diffuse color near horizon because it gets desaturated by falloff
+ //   gl_FragColor = 1.0 - exp((diffuseColor * (1.0 + uv.y) + mieColor) * -fExposure);
+}

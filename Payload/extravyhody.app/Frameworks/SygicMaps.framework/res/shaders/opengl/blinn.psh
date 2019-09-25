@@ -1,0 +1,57 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform vec4		u_vAmbient;
+uniform vec4		u_vDiffuse;
+uniform vec4		u_vSpecular;
+uniform float		u_fShininess;
+
+uniform sampler2D	u_tAmbient;
+uniform sampler2D	u_tDiffuse;
+uniform sampler2D	u_tSpecular;
+
+// ------- INTERPOLATORS (SHADER OUTPUTS) -------
+varying vec3		v_vPosition;
+varying vec3		v_vNormal;
+#if defined(TEXTURE_A) || defined(TEXTURE_D) || defined(TEXTURE_S)
+varying vec2		v_vTexCoord;
+#endif
+
+vec3 vLightDirection = vec3(0.2, 0.8, 0.0);
+
+void main(void)
+{
+	vec3 L = normalize(vLightDirection);
+	vec3 N = normalize(v_vNormal);
+	vec3 E = normalize(-v_vPosition); // we are in Eye Coordinates, so EyePos is (0,0,0)
+	vec3 R = normalize(reflect(-L, N));
+
+	//calculate Diffuse Term:
+	float diffuse = max(dot(N, L), 0.0);
+	diffuse = clamp(diffuse, 0.0, 1.0);
+	float specular = 0.0;
+
+	// calculate Specular Term:
+	if (diffuse > 0.0 && u_fShininess > 0.0)
+	{
+		specular = pow(max(dot(R, E), 0.0), u_fShininess);
+		specular = clamp(specular, 0.0, 1.0);
+	}
+
+	vec4 vAmbient = u_vAmbient;
+#if defined(TEXTURE_A)
+	vAmbient *= texture2D(u_tAmbient, v_vTexCoord);
+#endif
+
+	vec4 vDiffuse = u_vDiffuse;
+#if defined(TEXTURE_D)
+	vDiffuse *= texture2D(u_tDiffuse, v_vTexCoord);
+#endif
+
+	vec4 vSpecular = u_vSpecular;
+#if defined(TEXTURE_S)
+	vSpecular *= texture2D(u_tSpecular, v_vTexCoord);
+#endif
+
+	// write Total Color:
+	gl_FragColor = vAmbient + vDiffuse * diffuse + vSpecular * specular;
+}

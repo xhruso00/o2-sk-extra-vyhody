@@ -1,0 +1,159 @@
+
+#if defined(COLOR_TO_TEXTURE_INTERPOLATION)
+#define TEXTURE0
+#define CONST_COLOR
+#endif
+
+#if defined(CONST_COLOR) && defined(VERTEX_COLOR)
+// "const color" handled in vertex shader
+#undef CONST_COLOR
+#endif
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	u_tGeoNormalmap;
+uniform vec3		u_vGeoNormalmapLight;
+
+uniform sampler2D	u_tAmbient;
+
+uniform mediump vec4	u_vColor;
+
+uniform float		u_vOutputColorCoef_r;
+uniform float		u_vOutputColorCoef_g;
+uniform float		u_vOutputColorCoef_b;
+
+uniform float		u_vOutputColorCoef_a;
+
+uniform float		u_vColorToTextureInterpolation;
+
+uniform float		hu_fAlphaTestValue;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+#if defined(GEONORMALMAP)
+varying vec2		v_vHeightmapUV0, v_vHeightmapUV1, v_vHeightmapUV2, v_vHeightmapUV3, v_vHeightmapUV4, v_vHeightmapUV5, v_vHeightmapUV6, v_vHeightmapUV7, v_vHeightmapUV8;
+#endif
+
+#if defined(TEXTURE0)
+varying vec2		v_vTexCoord;
+#endif
+
+#if defined(VERTEX_COLOR)
+varying vec4		v_vColor;
+#endif
+
+#if defined(BLEND_BY_DISTANCE)
+varying float		v_fBlendFactor;
+#endif
+
+// ------- FUNCTIONS ------- 
+
+// suffix:
+// F - incoming fragment
+// T - texture fragment
+// V - produced value
+
+void main(void)
+{
+	vec4 vColorF;
+	vec4 vColorT;
+	vec4 vColorV;
+	
+// incoming fragment
+#define INCOMING_FRAGMENT
+#if defined(CONST_COLOR) && defined(VERTEX_COLOR)
+	vColorF = v_vColor*u_vColor;
+#elif defined(CONST_COLOR)
+	vColorF = u_vColor;
+#elif defined(VERTEX_COLOR)
+	vColorF = v_vColor;
+#else
+#undef INCOMING_FRAGMENT
+#endif
+
+// texture fragment
+#define TEXTURE_FRAGMENT
+#ifdef TEXTURE0
+	vColorT = texture2D(u_tAmbient, v_vTexCoord);
+#else
+#undef TEXTURE_FRAGMENT
+#endif
+
+// modulate
+#if defined(TEXTURE_FRAGMENT)
+	#ifdef TEXTURE0_ALPHA
+		#ifdef INCOMING_FRAGMENT
+			vColorV.rgb = vColorF.rgb;
+			vColorV.a = vColorF.a*vColorT.a;
+			//vColorV = vec4(1,0,0,1);
+		#else
+			#error incoming fragment required
+		#endif
+	#else
+		#ifdef INCOMING_FRAGMENT
+			#ifdef COLOR_TO_TEXTURE_INTERPOLATION
+				vColorV = lerp(vColorF, vColorT, u_vColorToTextureInterpolation);
+			#else
+				vColorV = vColorF*vColorT;
+			#endif
+		#else
+			vColorV = vColorT;
+		#endif
+	#endif
+#elif defined(INCOMING_FRAGMENT)
+	vColorV = vColorF;
+#else
+	#error neither incoming nor texture fragment defined
+#endif
+
+#ifdef OUTPUT_COLOR_FUNCTION
+	vColorV.r *= u_vOutputColorCoef_r;
+	vColorV.g *= u_vOutputColorCoef_g;
+	vColorV.b *= u_vOutputColorCoef_b;
+#endif
+
+#ifdef OUTPUT_ALPHA_FUNCTION
+	vColorV.a *= u_vOutputColorCoef_a;
+#endif
+
+#ifdef BLEND_BY_DISTANCE
+	vColorV.a *= v_fBlendFactor;
+#endif
+
+#ifdef ALPHA_TEST
+	if (vColorV.a <= hu_fAlphaTestValue)
+	{
+		discard;
+	}
+#endif
+
+#if defined(GEONORMALMAP)
+	// Sobel filter
+	// [0, 1, 2] [1, 2, 1]
+	// [3, 4, 5] [2, 4, 2]
+	// [6, 7, 8] [1, 2, 1]
+	vec3 vNormal0 = texture2D(u_tGeoNormalmap, v_vHeightmapUV0).xyz;
+	vec3 vNormal1 = texture2D(u_tGeoNormalmap, v_vHeightmapUV1).xyz;
+	vec3 vNormal2 = texture2D(u_tGeoNormalmap, v_vHeightmapUV2).xyz;
+	vec3 vNormal3 = texture2D(u_tGeoNormalmap, v_vHeightmapUV3).xyz;
+	vec3 vNormal4 = texture2D(u_tGeoNormalmap, v_vHeightmapUV4).xyz;
+	vec3 vNormal5 = texture2D(u_tGeoNormalmap, v_vHeightmapUV5).xyz;
+	vec3 vNormal6 = texture2D(u_tGeoNormalmap, v_vHeightmapUV6).xyz;
+	vec3 vNormal7 = texture2D(u_tGeoNormalmap, v_vHeightmapUV7).xyz;
+	vec3 vNormal8 = texture2D(u_tGeoNormalmap, v_vHeightmapUV8).xyz;
+	vec3 vNormal = normalize((
+		1.0*vNormal0 + 2.0*vNormal1 + 1.0*vNormal2 +
+		2.0*vNormal3 + 4.0*vNormal4 + 2.0*vNormal5 +
+		1.0*vNormal6 + 2.0*vNormal7 + 1.0*vNormal8
+		)/16.0);
+
+	vNormal = normalize((vNormal - 0.5)*2.0);
+
+	float d = dot(vNormal, u_vGeoNormalmapLight);
+	vColorV.rgb *= clamp(0.7 + 0.4 * d, 0.0, 1.0);
+#endif
+
+#ifdef GRAYSCALE
+	vColorV.rgb = vec3(dot(vColorV.rgb, vec3(0.3, 0.59, 0.11)));
+#endif
+
+	gl_FragColor = vColorV;
+}

@@ -1,0 +1,146 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	u_tMask;
+uniform sampler2D	u_tMaskOneway;
+uniform sampler2D	u_tMaskClosed;
+
+uniform lowp float	hu_fSin11; // debug
+
+// all types
+uniform bool		u_bRenderBorders;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2		v_vTexCoord2; // uv
+varying vec4		v_vColor;
+varying vec4		v_vBorderColor;
+varying vec4		v_vMaskColor;
+varying vec2		v_fDistance; // [max, current] in km
+varying float		v_fPathWidth;
+varying float		v_fMaskIndex;
+varying float		v_fBorderWidth;
+
+float cap(vec2 uv, bool isRoadEnd)
+{
+	float u = uv.x;
+	float v = uv.y;
+
+	float halfPathWidth = 0.5*v_fPathWidth;
+
+	float d;
+	if (isRoadEnd)
+	{
+		float z = length(uv);
+		d = halfPathWidth*z;
+	}
+	else
+	{
+		d = halfPathWidth*u;
+	}
+
+	return d;
+}
+
+void main(void)
+{
+	vec4 vColor0 = v_vBorderColor;
+	vec4 vColor1 = v_vColor;
+
+	vec2 uv = v_vTexCoord2;
+
+	bool isRoadEnd = uv.y < 0.0;
+	if (!isRoadEnd)
+	{
+		float fColorMaskInterpolator = 0.0;
+		int iMaskIndex = int(v_fMaskIndex + 0.01);
+		if (iMaskIndex == 0)
+		{
+			fColorMaskInterpolator = texture2D(u_tMask, uv).r;
+		}
+		else if (iMaskIndex == 1)
+		{
+			fColorMaskInterpolator = texture2D(u_tMaskOneway, uv).r;
+		}
+		else if (iMaskIndex == 2)
+		{
+			fColorMaskInterpolator = texture2D(u_tMaskClosed, uv).r;
+		}
+		vColor1 = mix(vColor1, v_vMaskColor, fColorMaskInterpolator);
+	}
+
+	float antialias = min(0.5 * v_fBorderWidth, 1.5);
+	
+	float u = abs(2.0*uv.x - 1.0); // [0.0, 1.0] -> abs[-1.0, 1.0]
+	float v = uv.y;
+	float d = cap(vec2(u, v), isRoadEnd) - 0.5 * v_fPathWidth;
+
+	vec4 vFrag;
+
+	float outerD = d + antialias;
+	float innerD = d - antialias + v_fBorderWidth;
+
+	if (!u_bRenderBorders && innerD > -antialias)
+	{
+		discard;
+	}
+
+	if (innerD < -antialias)
+	{
+		vFrag = vColor1;
+	}
+	else if (innerD >= 0.0 && outerD <= 0.0)
+	{
+		vFrag = vColor0;
+	}
+	else if (innerD < 0.0)
+	{
+		d = innerD / antialias;
+		vFrag = mix(vColor1, vColor0, 1.0 - d * d);
+	}
+	else
+	{
+		d = outerD / antialias;
+		vFrag = vColor0;
+		vFrag.a *= 1.0 - d * d;
+	}
+
+	{	// alpha
+		float outA = 1.0;
+		float fBlendFromMax = 0.1; // 10% from max distance
+		float fDistToMax = v_fDistance.x - v_fDistance.y;
+		float fBlendStart = fBlendFromMax * v_fDistance.x;
+		if (fDistToMax < 0.0)
+		{
+			outA = 0.0;
+		}
+		else if (fDistToMax < fBlendStart)
+		{
+			outA *= fDistToMax / fBlendStart;
+		}
+		vFrag.a *= outA;
+	}
+
+	gl_FragColor = vFrag;
+}
+
+//                                                                              
+//      <----------------------------------------------------------- v_fPathWidth (pixels) ------------------------------------------------------------>
+//
+//      u(-1.0)                                                               u(0.0)                                                              u(1.0)
+//      <-----------------------------------------------------------------------|---------------------------------------------------------------------->
+//
+//      <- antialias -->                <- antialias --> <---- body_pixels ---->
+//
+//          outer AA                        inner AA                          middle                             inner AA                    outer AA
+//     |----------------|--------------|----------------|-----------------------|-----------------------------|-------------|-------------|-------------|
+//     |                |              |                |                       |                             |             |             |             |   ^ v
+//     | alpha blended  | border color |   mix border   |      body color       |                             |             |             |             |   |
+//     |  border color  |              |  & body color  |                       |                             |             |             |             |   |
+//     |                |              |                |                       |                             |             |             |             |   |
+//     |<--- d (pixels) --->           |                |                       |                             |             |             |             |   |
+//     |                |              |                |                       |                             |             |             |             |   |
+//     |  <- outerD>0 ->|< outerD<0 >  |                |                       |                             |             |             |             |   |
+//     |                |              |                |                       |                             |             |             |             |   |
+//     |                |  < innerD>0 >|< innerD<0 >    |                       |                             |             |             |             |   |
+//     |                |              |                |                       |                             |             |             |             |   |
+//
+//

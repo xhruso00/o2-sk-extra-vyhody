@@ -1,0 +1,43 @@
+#ifdef GL_OES_standard_derivatives
+	#extension GL_OES_standard_derivatives : enable
+	#define OES_standard_derivatives_enabled
+#endif
+
+#preprocess
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform float		u_fLineWidth;
+uniform vec4		u_vLineColor;
+uniform vec4		u_vFillColor;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2		v_vTex0UV;
+
+// ------- FUNCTIONS ------- 
+
+void main(void)
+{
+	vec4 vColor = u_vFillColor;
+
+	float distanceFromCenter = length(vec2(0.5, 0.5) - v_vTex0UV);
+	float lerpSize = 0.01;
+
+	#ifdef OES_standard_derivatives_enabled // simple antialias
+		float dx = dFdx(distanceFromCenter);
+		float dy = dFdy(distanceFromCenter);
+		float dl = length(vec2(dx,dy)); // fwidth?
+		lerpSize = 1.6 * dl;
+	#else
+		lerpSize *= clamp(u_fLineWidth, 0.5, 1.5);
+	#endif
+
+	const float borderStop = 0.5;
+	float borderStart = borderStop - 2.0 * lerpSize - u_fLineWidth * 0.001;
+	if (u_fLineWidth > 0.01)
+	{
+		vColor = lerp(vColor, u_vLineColor, interpolate(distanceFromCenter, borderStart, borderStart + lerpSize));
+	}
+	vColor = lerp(vColor, vec4(vec3(vColor), 0.0), interpolate(distanceFromCenter, borderStop - lerpSize, borderStop));
+
+	gl_FragColor = vColor;
+}

@@ -1,0 +1,10 @@
+<skin>
+    <map>
+        <models>
+            <object name="vehicle" type="C3DMapFileModelObject">
+                <filename value="models/planeinvalid.obj"/>
+                <settings value="map/settings/vehicle.main"/>
+            </object>
+        </models>
+    </map>
+</skin>

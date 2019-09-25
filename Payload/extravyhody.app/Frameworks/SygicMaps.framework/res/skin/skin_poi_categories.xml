@@ -1,0 +1,566 @@
+<skin>
+	<map>
+		<pois>
+			<categories>
+				<object name="Rent_a_Car_Facility" type="Map::CPoiCategory">
+					<icon value="U+E317" />
+				</object>
+				<object name="Tourist_Information_Office" type="Map::CPoiCategory">
+					<icon value="U+E328" />
+				</object>
+				<object name="Museum" type="Map::CPoiCategory">
+					<icon value="U+E30A" />
+				</object>
+				<object name="Theatre" type="Map::CPoiCategory">
+					<icon value="U+E331" />
+				</object>
+				<object name="Cultural_Centre" type="Map::CPoiCategory">
+				</object>
+				<object name="Sports_Centre" type="Map::CPoiCategory">
+					<icon value="U+E352" />
+				</object>
+				<object name="Hospital_Polyclinic" type="Map::CPoiCategory">
+					<icon value="U+E364" />
+				</object>
+				<object name="Police_Station" type="Map::CPoiCategory">
+					<icon value="U+E368" />
+				</object>
+				<object name="City_Hall" type="Map::CPoiCategory">
+					<icon value="U+E308" />
+				</object>
+				<object name="Post_Office" type="Map::CPoiCategory">
+					<icon value="U+E30D" />
+				</object>
+				<object name="First_Aid_Post" type="Map::CPoiCategory">
+					<icon value="U+E365" />
+				</object>
+				<object name="Pharmacy" type="Map::CPoiCategory">
+					<icon value="U+E363" />
+					<zoom_level_max value="17.4" />
+				</object>
+				<object name="Department_Store" type="Map::CPoiCategory">
+					<icon value="U+E334" />
+				</object>
+				<object name="Bank" type="Map::CPoiCategory">
+					<icon value="U+E309" />
+				</object>
+				<object name="Travel_Agency" type="Map::CPoiCategory">
+				</object>
+				<object name="Public_Phone" type="Map::CPoiCategory">
+					<icon value="U+E00F" />
+				</object>
+				<object name="Warehouse" type="Map::CPoiCategory">
+					<icon value="U+E36C" />
+				</object>
+				<object name="Ski_Lift_Station" type="Map::CPoiCategory">
+					<icon value="U+E326" />
+				</object>
+				<object name="Zoo" type="Map::CPoiCategory">
+					<icon value="U+E360" />
+					<zoom_level_max value="12.4" />
+                    <priority_group value="Map::PoiPriorityGroup::Major"/>
+				</object>
+				<object name="Scenic_Panoramic_View" type="Map::CPoiCategory">
+					<icon value="U+E35A" />
+				</object>
+				<object name="Transport_Company" type="Map::CPoiCategory">
+					<icon value="U+E205" />
+				</object>
+				<object name="Casino" type="Map::CPoiCategory">
+					<icon value="U+E32E" />
+				</object>
+				<object name="Cinema" type="Map::CPoiCategory">
+					<icon value="U+E332" />
+				</object>
+				<object name="Winery" type="Map::CPoiCategory">
+					<icon value="U+E347" />
+				</object>
+				<object name="Cargo_Centre" type="Map::CPoiCategory">
+					<icon value="U+E36C" />
+				</object>
+				<object name="Car_Shipping_Terminal" type="Map::CPoiCategory">
+					<icon value="U+E321" />
+				</object>
+				<object name="Camping_Ground" type="Map::CPoiCategory">
+					<icon value="U+E34E" />
+				</object>
+				<object name="Caravan_Site" type="Map::CPoiCategory">
+					<icon value="U+E34D" />
+				</object>
+				<object name="Coach_and_Lorry_Parking" type="Map::CPoiCategory">
+				</object>
+				<object name="Community_Centre" type="Map::CPoiCategory">
+					<icon value="U+E30B" />
+				</object>
+				<object name="Customs" type="Map::CPoiCategory">
+					<icon value="U+E327" />
+				</object>
+				<object name="Embassy" type="Map::CPoiCategory">
+					<icon value="U+E308" />
+				</object>
+				<object name="Frontier_Crossing" type="Map::CPoiCategory">
+					<icon value="U+E327" />
+				</object>
+				<object name="Motoring_Organization_Office" type="Map::CPoiCategory">
+				</object>
+				<object name="Recreation_Facility" type="Map::CPoiCategory">
+					<icon value="U+E350" />
+				</object>
+				<object name="Road_Side_Diner" type="Map::CPoiCategory">
+					<icon value="U+E34B" />
+				</object>
+				<object name="School" type="Map::CPoiCategory">
+					<icon value="U+E310" />
+				</object>
+				<object name="Shopping_Centre" type="Map::CPoiCategory">
+					<icon value="U+E335" />
+					<zoom_level_max value="12.1" />
+                    <priority_group value="Map::PoiPriorityGroup::Major"/>
+				</object>
+				<object name="Stadium" type="Map::CPoiCategory">
+					<icon value="U+E352" />
+					<zoom_level_max value="11.9" />
+                    <priority_group value="Map::PoiPriorityGroup::Major"/>
+				</object>
+				<object name="Toll" type="Map::CPoiCategory">
+					<icon value="U+E282" />
+				</object>
+				<object name="College_University" type="Map::CPoiCategory">
+					<icon value="U+E30F" />
+				</object>
+				<object name="Business_Facility" type="Map::CPoiCategory">
+					<icon value="U+E30B" />
+				</object>
+				<object name="Airport" type="Map::CPoiCategory">
+					<icon value="U+E20B" />
+					<zoom_level_max value="7.4" />
+                    <priority_group value="Map::PoiPriorityGroup::Major"/>
+				</object>
+				<object name="Bus_Station" type="Map::CPoiCategory">
+					<icon value="U+E206" />
+					<zoom_level_max value="12.4" />
+                    <priority_group value="Map::PoiPriorityGroup::Major"/>
+				</object>
+				<object name="Exhibition_Centre" type="Map::CPoiCategory">
+					<icon value="U+E30B" />
+				</object>
+				<object name="Kindergarten" type="Map::CPoiCategory">
+					<icon value="U+E311" />
+				</object>
+				<object name="Emergency_Call_Station" type="Map::CPoiCategory">
+					<icon value="U+E366" />
+				</object>
+				<object name="Emergency_Medical_Service" type="Map::CPoiCategory">
+					<icon value="U+E365" />
+				</object>
+				<object name="Fire_Brigade" type="Map::CPoiCategory">
+					<icon value="U+E367" />
+				</object>
+				<object name="Freeport" type="Map::CPoiCategory">
+					<icon value="U+E049" />
+				</object>
+				<object name="Company" type="Map::CPoiCategory">
+					<icon value="U+E049" />
+					<enabled value="false" />
+				</object>
+				<object name="ATM" type="Map::CPoiCategory">
+					<icon value="U+E314" />
+				</object>
+				<object name="Hippodrome" type="Map::CPoiCategory">
+					<icon value="U+E352" />
+				</object>
+				<object name="Beach" type="Map::CPoiCategory">
+					<icon value="U+E35F" />
+					<zoom_level_max value="11.4" />
+                    <priority_group value="Map::PoiPriorityGroup::Major"/>
+				</object>
+				<object name="Restaurant_Area" type="Map::CPoiCategory">
+					<icon value="U+E34C" />
+				</object>
+				<object name="Ice_Skating_Rink" type="Map::CPoiCategory">
+				</object>
+				<object name="Courthouse" type="Map::CPoiCategory">
+					<icon value="U+E30C" />
+				</object>
+				<object name="Mountain_Peak" type="Map::CPoiCategory">
+					<icon value="U+E35B" />
+					<zoom_level_max value="12.4" />
+                    <priority_group value="Map::PoiPriorityGroup::Major"/>
+				</object>
+				<object name="Opera" type="Map::CPoiCategory">
+					<icon value="U+E330" />
+				</object>
+				<object name="Concert_Hall" type="Map::CPoiCategory">
+					<icon value="U+E32F" />
+				</object>
+				<object name="Bovag_Garage" type="Map::CPoiCategory">
+					<icon value="U+E31D" />
+				</object>
+				<object name="Tennis_Court" type="Map::CPoiCategory">
+					<icon value="U+E355" />
+				</object>
+				<object name="Skating_Rink" type="Map::CPoiCategory">
+				</object>
+				<object name="Water_Sport" type="Map::CPoiCategory">
+					<icon value="U+E35E" />
+				</object>
+				<object name="Music_Centre" type="Map::CPoiCategory">
+					<icon value="U+E32F" />
+				</object>
+				<object name="Doctor" type="Map::CPoiCategory">
+					<icon value="U+E364" />
+					<enabled value="false" />
+				</object>
+				<object name="Dentist" type="Map::CPoiCategory">
+					<icon value="U+E362" />
+					<enabled value="false" />
+				</object>
+				<object name="Veterinarian" type="Map::CPoiCategory">
+					<icon value="U+E361" />
+					<enabled value="false" />
+				</object>
+				<object name="Cafe_Pub" type="Map::CPoiCategory">
+					<icon value="U+E349" />
+				</object>
+				<object name="Convention_Centre" type="Map::CPoiCategory">
+					<icon value="U+E312" />
+				</object>
+				<object name="Leisure_Centre" type="Map::CPoiCategory">
+					<icon value="U+E350" />
+				</object>
+				<object name="Nightlife" type="Map::CPoiCategory">
+					<icon value="U+E348" />
+				</object>
+				<object name="Yacht_Basin" type="Map::CPoiCategory">
+					<icon value="U+E36D" />
+				</object>
+				<object name="Condominium" type="Map::CPoiCategory">
+					<icon value="U+E059" />
+				</object>
+				<object name="Commercial_Building" type="Map::CPoiCategory">
+					<icon value="U+E059" />
+				</object>
+				<object name="Industrial_Building" type="Map::CPoiCategory">
+					<icon value="U+E36B" />
+				</object>
+				<object name="Natives_Reservation" type="Map::CPoiCategory">
+				</object>
+				<object name="Cemetery" type="Map::CPoiCategory">
+					<icon value="U+E307" />
+				</object>
+				<object name="General" type="Map::CPoiCategory">
+					<icon value="U+E049" />
+				</object>
+				<object name="Breakdown_Service" type="Map::CPoiCategory">
+					<icon value="U+E319" />
+				</object>
+				<object name="Vehicle_Equipment_Provider" type="Map::CPoiCategory">
+					<icon value="U+E319" />
+				</object>
+				<object name="Entertainment" type="Map::CPoiCategory">
+				</object>
+				<object name="Abbey" type="Map::CPoiCategory">
+					<icon value="U+E304" />
+				</object>
+				<object name="Amusement_Park" type="Map::CPoiCategory">
+					<icon value="U+E32D" />
+					<zoom_level_max value="11.4" />
+                    <priority_group value="Map::PoiPriorityGroup::Major"/>
+				</object>
+				<object name="Arts_Centre" type="Map::CPoiCategory">
+					<icon value="U+E333" />
+				</object>
+				<object name="Building_Footprint" type="Map::CPoiCategory">
+				</object>
+				<object name="Castle" type="Map::CPoiCategory">
+					<icon value="U+E32A" />
+					<zoom_level_max value="11.4" />
+                    <priority_group value="Map::PoiPriorityGroup::Major"/>
+				</object>
+				<object name="Church" type="Map::CPoiCategory">
+					<icon value="U+E304" />
+				</object>
+				<object name="Factory_Ground_Philips" type="Map::CPoiCategory">
+					<icon value="U+E36B" />
+				</object>
+				<object name="Fortress" type="Map::CPoiCategory">
+					<icon value="U+E329" />
+					<zoom_level_max value="11.4" />
+                    <priority_group value="Map::PoiPriorityGroup::Major"/>
+				</object>
+				<object name="Golf_Course" type="Map::CPoiCategory">
+					<icon value="U+E354" />
+				</object>
+				<object name="Holiday_Area" type="Map::CPoiCategory">
+					<icon value="U+E35F" />
+				</object>
+				<object name="Library" type="Map::CPoiCategory">
+					<icon value="U+E30E" />
+				</object>
+				<object name="Lighthouse" type="Map::CPoiCategory">
+				</object>
+				<object name="Military_Cemetery" type="Map::CPoiCategory">
+					<icon value="U+E307" />
+				</object>
+				<object name="Monastery" type="Map::CPoiCategory">
+					<icon value="U+E304" />
+				</object>
+				<object name="Monument" type="Map::CPoiCategory">
+					<icon value="U+E32B" />
+					<zoom_level_max value="11.4" />
+                    <priority_group value="Map::PoiPriorityGroup::Major"/>
+				</object>
+				<object name="Natural_Reserve" type="Map::CPoiCategory">
+					<icon value="U+E337" />
+				</object>
+				<object name="Prison" type="Map::CPoiCategory">
+					<icon value="U+E36A" />
+				</object>
+				<object name="Rocks" type="Map::CPoiCategory">
+				</object>
+				<object name="Sports_Hall" type="Map::CPoiCategory">
+					<icon value="U+E352" />
+				</object>
+				<object name="State_Police_Office" type="Map::CPoiCategory">
+					<icon value="U+368" />
+				</object>
+				<object name="Walking_Area" type="Map::CPoiCategory">
+				</object>
+				<object name="Water_Mill" type="Map::CPoiCategory">
+				</object>
+				<object name="Windmill" type="Map::CPoiCategory">
+				</object>
+				<object name="Rent_a_Car_Parking" type="Map::CPoiCategory">
+					<icon value="U+E317" />
+				</object>
+				<object name="Car_Racetrack" type="Map::CPoiCategory">
+					<icon value="U+E352" />
+				</object>
+				<object name="Mountain_Pass" type="Map::CPoiCategory">
+					<icon value="U+E35A" />
+				</object>
+				<object name="Swimming_Pool" type="Map::CPoiCategory">
+					<icon value="U+E35E" />
+				</object>
+				<object name="Government_Office" type="Map::CPoiCategory">
+					<icon value="U+E30B" />
+				</object>
+				<object name="Agricultural_Industry" type="Map::CPoiCategory">
+					<icon value="U+E36E" />
+				</object>
+				<object name="Construction" type="Map::CPoiCategory">
+					<icon value="U+E049" />
+				</object>
+				<object name="Factories" type="Map::CPoiCategory">
+					<icon value="U+E36B" />
+				</object>
+				<object name="Media" type="Map::CPoiCategory">
+					<icon value="U+E049" />
+				</object>
+				<object name="Medical_Material" type="Map::CPoiCategory">
+					<icon value="U+E363" />
+				</object>
+				<object name="Personal_Services" type="Map::CPoiCategory">
+					<icon value="U+E013" />
+				</object>
+				<object name="Professionals" type="Map::CPoiCategory">
+					<icon value="U+E049" />
+				</object>
+				<object name="Real_Estate" type="Map::CPoiCategory">
+					<icon value="U+E059" />
+				</object>
+				<object name="Services" type="Map::CPoiCategory">
+					<icon value="U+E049" />
+				</object>
+				<object name="Border_Point" type="Map::CPoiCategory">
+					<icon value="U+E327" />
+				</object>
+				<object name="Hair_And_Beauty" type="Map::CPoiCategory">
+				</object>
+				<object name="Groceries" type="Map::CPoiCategory">
+					<icon value="U+E340" />
+				</object>
+				<object name="Port" type="Map::CPoiCategory">
+					<icon value="U+E36D" />
+				</object>
+				<object name="Exchange" type="Map::CPoiCategory">
+					<icon value="U+E316" />
+				</object>
+				<object name="Money_Transfer" type="Map::CPoiCategory">
+					<icon value="U+E316" />
+				</object>
+				<object name="Pastry_and_Sweets" type="Map::CPoiCategory">
+					<icon value="U+E342" />
+				</object>
+				<object name="Archeology" type="Map::CPoiCategory">
+				</object>
+				<object name="Ecotourism_Sites" type="Map::CPoiCategory">
+					<icon value="U+E359" />
+				</object>
+				<object name="Hunting_Shop" type="Map::CPoiCategory">
+					<icon value="U+E334" />
+				</object>
+				<object name="Kids_Place" type="Map::CPoiCategory">
+					<icon value="U+E35D" />
+				</object>
+				<object name="Mobile_Shop" type="Map::CPoiCategory">
+					<icon value="U+E021" />
+				</object>
+				<object name="Mosque" type="Map::CPoiCategory">
+					<icon value="U+E306" />
+				</object>
+				<object name="Squares" type="Map::CPoiCategory">
+					<icon value="U+E049" />
+				</object>
+				<object name="Local_Names" type="Map::CPoiCategory">
+					<icon value="U+E049" />
+				</object>
+				<object name="TrafficLights" type="Map::CPoiCategory">
+					<icon value="U+E252" />
+				</object>
+				<object name="Parking_Garage" type="Map::CPoiCategory">
+					<icon value="U+E31D" />
+				</object>
+				<object name="Place_of_Worship" type="Map::CPoiCategory">
+					<icon value="U+E300" />
+				</object>
+				<object name="Ferry_Terminal" type="Map::CPoiCategory">
+					<icon value="U+E20A" />
+				</object>
+				<object name="Airline_Access" type="Map::CPoiCategory">
+					<icon value="U+E322" />
+				</object>
+				<object name="Open_Parking_Area" type="Map::CPoiCategory">
+					<icon value="U+E31E" />
+				</object>
+				<object name="Important_Tourist_Attraction" type="Map::CPoiCategory">
+					<icon value="U+E32C" />
+					<zoom_level_max value="15.3" />
+				</object>
+				<object name="Railway_Station" type="Map::CPoiCategory">
+					<icon value="U+E209" />
+					<zoom_level_max value="11.7" />
+                    <priority_group value="Map::PoiPriorityGroup::Major"/>
+				</object>
+				<object name="Rest_Area" type="Map::CPoiCategory">
+					<icon value="U+E31F" />
+				</object>
+				<object name="Shop" type="Map::CPoiCategory">
+					<icon value="U+E335" />
+					<enabled value="false"/>
+				</object>
+				<object name="Park_and_Recreation_Area" type="Map::CPoiCategory">
+					<icon value="U+E35C" />
+					<zoom_level_max value="15.3" />
+				</object>
+				<object name="Forest_Area" type="Map::CPoiCategory">
+					<icon value="U+E359" />
+				</object>
+				<object name="Military_Installation" type="Map::CPoiCategory">
+					<icon value="U+E369" />
+				</object>
+				<object name="Public_Transport_Stop" type="Map::CPoiCategory">
+					<icon value="U+E320" />
+				</object>
+				<object name="Park_And_Ride" type="Map::CPoiCategory">
+					<icon value="U+E31E" />
+				</object>
+				<object name="Wikipedia" type="Map::CPoiCategory">
+					<icon value="U+E328" />
+				</object>
+				<object name="Car_Repair_Facility" type="Map::CPoiCategory">
+					<icon value="U+E319" />
+				</object>
+				<object name="Petrol_Station" type="Map::CPoiCategory">
+					<icon value="U+E31B" />
+                    <priority_group value="Map::PoiPriorityGroup::Major"/>
+				</object>
+				<object name="Hotel_or_Motel" type="Map::CPoiCategory">
+					<icon value="U+E34F" />
+				</object>
+				<object name="Restaurant" type="Map::CPoiCategory">
+					<icon value="U+E34C" />
+				</object>
+				<object name="Cash_Dispenser" type="Map::CPoiCategory">
+					<icon value="U+E313" />
+				</object>
+				<object name="Car_Dealer" type="Map::CPoiCategory">
+				</object>
+				<object name="Food" type="Map::CPoiCategory">
+					<icon value="U+E34B" />
+				</object>
+				<object name="Speed_Cameras" type="Map::CPoiCategory">
+					<icon value="U+E24F" />
+				</object>
+				<object name="Supermarket" type="Map::CPoiCategory">
+					<icon value="U+E334" />
+				</object>
+				<object name="Car_Services" type="Map::CPoiCategory">
+				</object>
+				<object name="Accessories_Furniture" type="Map::CPoiCategory">
+					<icon value="U+E33C" />
+				</object>
+				<object name="Books_Cards" type="Map::CPoiCategory">
+					<icon value="U+E33D" />
+				</object>
+				<object name="Childrens_Fashion" type="Map::CPoiCategory">
+					<icon value="U+E33B" />
+				</object>
+				<object name="Children_Toys" type="Map::CPoiCategory">
+					<icon value="U+E339" />
+				</object>
+				<object name="Cosmetics_Perfumes" type="Map::CPoiCategory">
+					<icon value="U+E33E" />
+				</object>
+				<object name="Electronics_Mobiles" type="Map::CPoiCategory">
+					<icon value="U+E021" />
+				</object>
+				<object name="Fashion_Mixed" type="Map::CPoiCategory">
+					<icon value="U+E33B" />
+				</object>
+				<object name="Fashion_Accessories" type="Map::CPoiCategory">
+					<icon value="U+E33B" />
+				</object>
+				<object name="Traditional_Fashion" type="Map::CPoiCategory">
+					<icon value="U+E33B" />
+				</object>
+				<object name="Gifts_Antiques" type="Map::CPoiCategory">
+					<icon value="U+E33F" />
+				</object>
+				<object name="Jewellery_Watches" type="Map::CPoiCategory">
+					<icon value="U+E336" />
+				</object>
+				<object name="Ladies_Fashion" type="Map::CPoiCategory">
+					<icon value="U+E33B" />
+				</object>
+				<object name="Lifestyle_Fitness" type="Map::CPoiCategory">
+					<icon value="U+E351" />
+				</object>
+				<object name="Men_s_Fashion" type="Map::CPoiCategory">
+					<icon value="U+E33B" />
+				</object>
+				<object name="Opticians_Sunglasses" type="Map::CPoiCategory">
+				</object>
+				<object name="Shoes_Bags" type="Map::CPoiCategory">
+					<icon value="U+E33A" />
+				</object>
+				<object name="Sports" type="Map::CPoiCategory">
+					<icon value="U+E353" />
+				</object>
+				<object name="Metro" type="Map::CPoiCategory">
+					<icon value="U+E208" />
+				</object>
+				<object name="Chevrolet_Car_Dealer" type="Map::CPoiCategory">
+				</object>
+				<object name="Chevrolet_Car_Repair" type="Map::CPoiCategory">
+					<icon value="U+E319" />
+				</object>
+                <object name="Sy_Business" type="Map::CPoiCategory" />
+                <object name="Sy_Parking" type="Map::CPoiCategory" />
+                <object name="Sy_Shopping" type="Map::CPoiCategory" />
+                <object name="Sy_Eating_Drinking" type="Map::CPoiCategory" />
+                <object name="Sy_Gas_Station" type="Map::CPoiCategory" />
+            </categories>
+		</pois>
+	</map>
+</skin>

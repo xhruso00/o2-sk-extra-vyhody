@@ -1,0 +1,190 @@
+#ifdef GL_OES_standard_derivatives
+	#extension GL_OES_standard_derivatives : enable
+	#define OES_standard_derivatives_enabled
+#endif
+
+#preprocess
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	u_tColors;
+uniform sampler2D	u_tArrow;
+
+uniform float		hu_fDiscreteLog2GroundDistanceInKm;
+uniform lowp float	hu_fSin11; // debug
+uniform float		hu_fDPIScaleFactor;
+uniform mediump int	hu_nRenderPass;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2		v_vTex0UV;
+varying vec4		v_vColorUVs;
+varying vec2		v_vParams;
+varying vec3		v_fPackedWidths; // v_fWidth, v_fBorderWidth, v_fBorderWidthInMeters
+varying vec2		v_fDistance; // [max, current] in km
+varying float		v_fColorsInterpolator;
+
+// ------- FUNCTIONS ------- 
+
+void main(void)
+{
+	vec4 vColor = texture2D(u_tColors, v_vColorUVs.xy);
+	vColor.a = 1.0;
+	vec4 vColor2 = texture2D(u_tColors, v_vColorUVs.zw);
+	vColor2.a = 1.0;
+	vec4 col = vColor;
+	vec4 col2 = vColor2;
+	vec2 uv = v_vTex0UV;
+
+	float fCoef = 13.0;
+
+	bool bIsRoadEnd = (uv.y < 0.0) ? true : false;
+	int iRoadDirection = int(v_vParams.y + 0.01);
+	int iRoadType = int(v_vParams.x + 0.01);
+	float len = 40.0;
+	float k = hu_fDiscreteLog2GroundDistanceInKm;
+	float fact = len*k;
+	float f = mod(uv.y, fact);
+	float fDiff = f - fact/2.0;
+	float fBlendLen = v_fPackedWidths.z/2.0;
+	float fBlendInterpolator = 1.0;
+
+	bool bRailways = iRoadType == 10;
+	if (bRailways)
+	{
+		if (f < fBlendLen)
+		{
+			fBlendInterpolator = f / fBlendLen;
+		}
+		else if (fDiff > 0.0 && fDiff < fBlendLen)
+		{
+			fBlendInterpolator = fDiff / fBlendLen;
+		}
+
+		if (fDiff < 0.0)
+		{
+			vec4 tmp = vColor;
+			vColor = vColor2;
+			vColor2 = tmp;
+		}
+
+		if (hu_nRenderPass == 1)
+		{
+			if (f < fBlendLen || (fDiff > 0.0 && fDiff < fBlendLen))
+			{
+				vColor = mix(vColor2, vColor, fBlendInterpolator);
+			}
+		}
+		else if (!(fDiff < 0.0))
+		{
+			vColor2 = vColor;
+		}
+	}
+	else
+	{
+		bool bOneWay = iRoadDirection == 1 || iRoadDirection == 2;
+		//if (uv.y > 10.0)
+		if (hu_nRenderPass == 1 && iRoadType > 6 && bOneWay && uv.y > 0.01)
+		{
+			float coord = -2.0*f/(len*hu_fDiscreteLog2GroundDistanceInKm);
+			//float coord = -3.0*(f + 3.333)/(len);
+			if (iRoadDirection == 1)
+				coord *= -1.0;
+
+			vec4 vArrow = texture2D(u_tArrow, vec2(uv.x, coord));
+
+			if (vArrow.a > 0.0)
+			{
+				vColor = mix(vColor, vColor2, vArrow.a);
+				vColor.a = 1.0;// vArrow.a;
+			}
+		}
+	}
+
+	float u = abs(2.0*uv.x - 1.0); // [0.0, 1.0] -> abs[-1.0, 1.0]
+	float outA = 1.0;
+
+	{
+		float fBlendFromMax = 0.1; // 10% from max distance
+		float fDistToMax = v_fDistance.x - v_fDistance.y;
+		float fBlendStart = fBlendFromMax * v_fDistance.x;
+		if (fDistToMax < 0.0)
+		{
+			outA = 0.0;
+		}
+		else if (fDistToMax < fBlendStart)
+		{
+			outA *= fDistToMax / fBlendStart;
+		}
+	}
+
+	if (hu_nRenderPass == 1)
+	{
+		if (!bRailways)
+		{
+			vColor = mix(vColor, vColor2, v_fColorsInterpolator);
+		}
+
+		if (bIsRoadEnd)
+		{
+			float y = uv.y;
+			float z = sqrt(u*u+y*y);
+			if (z > 1.0)
+				discard;
+		}
+
+		gl_FragColor = vColor;
+		gl_FragColor.a *= outA;
+		return;
+	}
+
+	float d = v_fPackedWidths.x; // distance in pixels from center to current pixel
+	if (bIsRoadEnd)
+	{
+		float y = uv.y;
+		float z = sqrt(u*u+y*y);
+		if (z > 1.0)
+		{
+			gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0); // discard?
+			return;
+		}
+		d *= z;
+	}
+	else
+	{
+		d *= u;
+	}
+
+	vec4 vColorOut;
+	float t = (v_fPackedWidths.x - v_fPackedWidths.y / 2.0); // distance in pixels from line center to pixel where AA starts
+	d = (d - t) / v_fPackedWidths.y; // distance from pixel to line where AA starts
+	float fExp = exp(-fCoef * d * d);
+	if (d < 0.0)
+	{	// inner road border
+		if (bRailways)
+		{
+			if (f < fBlendLen)
+			{
+				//vColor = vec4(1.0, 1.0, 0.0, 1.0);
+				vColor = mix(vColor2, vColor, fBlendInterpolator);
+			}
+			else if (fDiff > 0.0 && fDiff < fBlendLen)
+			{
+				//vColor = vec4(1.0, 0.0, 1.0, 1.0);
+				vColor = mix(col2 , col, fBlendInterpolator);
+			}
+		}
+		else
+		{
+			vColor = mix(vColor, vColor2, v_fColorsInterpolator);
+		}
+
+		vColorOut = mix(vColor, vColor2, fExp);
+	}
+	else
+	{	// outer road border
+		vColorOut = vec4(vColor2.rgb, fExp * vColor2.a);
+	}
+
+	vColorOut.a *= outA;
+	//vColorOut.a = 1.0;
+	gl_FragColor = vColorOut;
+}

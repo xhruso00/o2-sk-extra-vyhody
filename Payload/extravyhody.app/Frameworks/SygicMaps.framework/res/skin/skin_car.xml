@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<skin>
+	<map>
+		<textstyles>
+			<object name="textstyle.street_big" type="Library::CTextStyle">
+				<font value="map/fonts/bold.18"/>
+				<color value="0x505050ff"/>
+				<color_border value="0xffffff78"/>
+				<text_wrap value="Library::ETextWrap::Singleline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+				<border_size value="2.000000"/>
+			</object>
+			<object name="textstyle.street" type="Library::CTextStyle">
+				<font value="map/fonts/bold.16"/>
+				<color value="0x505050ff"/>
+				<color_border value="0xffffff78"/>
+				<text_wrap value="Library::ETextWrap::Singleline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+				<border_size value="2.000000"/>
+			</object>
+			<object name="textstyle.street_small" type="Library::CTextStyle">
+				<font value="map/fonts/bold.14"/>
+				<color value="0x505050ff"/>
+				<color_border value="0xffffff78"/>
+				<text_wrap value="Library::ETextWrap::Singleline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+				<border_size value="2.000000"/>
+			</object>
+			<object name="textstyle.street_x_small" type="Library::CTextStyle">
+				<font value="map/fonts/bold.12"/>
+				<color value="0x505050ff"/>
+				<color_border value="0xffffff78"/>
+				<text_wrap value="Library::ETextWrap::Singleline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+				<border_size value="2.000000"/>
+			</object>
+			<object name="city.city5" type="Library::CTextStyle">
+				<font value="map/fonts/bold.distance.24"/>
+				<color value="0x000000ff"/>
+				<color_border value="0xffffffff"/>
+				<text_wrap value="Library::ETextWrap::Multiline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+				<border_size value="2.000000"/>
+			</object>
+			<object name="city.city4" type="Library::CTextStyle">
+				<font value="map/fonts/bold.distance.18"/>
+				<color value="0x000000ff"/>
+				<color_border value="0xffffffff"/>
+				<text_wrap value="Library::ETextWrap::Multiline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+				<border_size value="2.000000"/>
+			</object>
+			<object name="city.city3" type="Library::CTextStyle">
+				<font value="map/fonts/bold.distance.16"/>
+				<color value="0x000000ff"/>
+				<color_border value="0xffffffff"/>
+				<text_wrap value="Library::ETextWrap::Multiline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+				<border_size value="2.000000"/>
+			</object>
+			<object name="city.city2" type="Library::CTextStyle">
+				<font value="map/fonts/bold.distance.14"/>
+				<color value="0x000000ff"/>
+				<color_border value="0xffffffff"/>
+				<text_wrap value="Library::ETextWrap::Multiline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+				<border_size value="2.000000"/>
+			</object>
+			<object name="city.city1" type="Library::CTextStyle">
+				<font value="map/fonts/bold.distance.12"/>
+				<color value="0x000000ff"/>
+				<color_border value="0xffffffff"/>
+				<text_wrap value="Library::ETextWrap::Multiline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+				<border_size value="2.000000"/>
+			</object>
+			<object name="city.city0" type="Library::CTextStyle">
+				<font value="map/fonts/bold.distance.12"/>
+				<color value="0x000000ff"/>
+				<color_border value="0xf3f0e9ff"/>
+				<text_wrap value="Library::ETextWrap::Multiline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+				<border_size value="2.000000"/>
+			</object>
+			<object name="city.water" type="Library::CTextStyle">
+				<font value="map/fonts/bold.distance.12"/>
+				<color value="0x2d6c94ff"/>
+				<color_border value="0xffffff66"/>
+				<text_wrap value="Library::ETextWrap::Multiline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+				<border_size value="1.00000"/>
+			</object>
+			<object name="city.wood" type="Library::CTextStyle">
+				<font value="map/fonts/bold.distance.12"/>
+				<color value="0x396d2bff"/>
+				<color_border value="0xffffff66"/>
+				<text_wrap value="Library::ETextWrap::Multiline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+				<border_size value="1.00000"/>
+			</object>
+			<object name="city.other" type="Library::CTextStyle">
+				<font value="map/fonts/bold.distance.12"/>
+				<color value="0x666666ff"/>
+				<color_border value="0xffffffcc"/>
+				<text_wrap value="Library::ETextWrap::Multiline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+				<border_size value="0.50000"/>
+			</object>
+			<object name="city.part" type="Library::CTextStyle">
+				<font value="map/fonts/italic.distance.14"/>
+				<color value="0x666666ff"/>
+				<color_border value="0xffffffff"/>
+				<text_wrap value="Library::ETextWrap::Multiline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+				<border_size value="0.500000"/>
+			</object>
+			<object name="city.province" type="Library::CTextStyle">
+				<font value="map/fonts/regular.distance.20"/>
+				<border_size value="1.500000"/>
+				<color value="0x00000060"/>
+				<color_border value="0xf3f0e9ff"/>
+				<text_wrap value="Library::ETextWrap::Multiline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+			</object>
+			<object name="city.country" type="Library::CTextStyle">
+				<font value="map/fonts/bold.distance.20"/>
+				<border_size value="3.0"/>
+				<color value="0x888888ff"/>
+				<color_border value="0xffffffcc"/>
+				<text_wrap value="Library::ETextWrap::Multiline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+			</object>
+			<object name="city.ocean" type="Library::CTextStyle">
+				<font value="map/fonts/bold.distance.24"/>
+				<color value="0x2687baff"/>
+				<color_border value="0xffffff33"/>
+				<text_wrap value="Library::ETextWrap::Singleline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+				<border_size value="1.50000"/>
+			</object>
+			<object name="textstyle.addresspoints" type="Library::CTextStyle">
+				<font value="map/fonts/bold.10"/>
+				<color value="0x505050ff"/>
+				<color_border value="0xffffff78"/>
+				<text_wrap value="Library::ETextWrap::Singleline"/>
+				<text_align value="Library::ETextAlign::AlignCenter"/>
+				<border_size value="1.000000"/>
+			</object>
+		</textstyles>
+		<pois>
+			<object name="font.icon" type="Library::CFont">
+				<font_name value="SygicIcons"/>
+				<size value="12"/>
+				<hinting value="false"/>
+			</object>
+			<object name="font.icon.background" type="Library::CFont">
+				<font_name value="SygicIcons"/>
+				<size value="24"/>
+				<hinting value="false"/>
+			</object>
+		</pois>
+		<settings>
+			<curves>
+				<object name="function.color_fall_off_r" type="C3DMapFunctionResult">
+					<parent type="CFunctionObject">
+						<definition>
+							<x value="0.90000"/>
+							<y value="1.000000"/>
+							<z value="2.000000"/>
+							<w value="12.000000"/>
+						</definition>
+					</parent>
+					<mapvalue value="E3DMapValue::GroundMpp"/>
+				</object>
+				<object name="function.color_fall_off_g" type="C3DMapFunctionResult">
+					<parent type="CFunctionObject">
+						<definition>
+							<x value="0.9400000"/>
+							<y value="1.000000"/>
+							<z value="2.000000"/>
+							<w value="12.000000"/>
+						</definition>
+					</parent>
+					<mapvalue value="E3DMapValue::GroundMpp"/>
+				</object>
+				<object name="function.color_fall_off_b" type="C3DMapFunctionResult">
+					<parent type="CFunctionObject">
+						<definition>
+							<x value="0.90000"/>
+							<y value="1.000000"/>
+							<z value="2.000000"/>
+							<w value="12.000000"/>
+						</definition>
+					</parent>
+					<mapvalue value="E3DMapValue::GroundMpp"/>
+				</object>
+			</curves>
+		</settings>
+	</map>
+</skin>

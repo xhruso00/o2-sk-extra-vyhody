@@ -1,0 +1,39 @@
+#ifdef GL_OES_standard_derivatives
+#extension GL_OES_standard_derivatives : enable
+#define OES_standard_derivatives_enabled
+#endif
+
+#preprocess
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+//uniform sampler2D	u_sTexture0;
+uniform float		u_fWidth;
+uniform vec4		u_fColor;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2		v_vTex0UV;
+varying vec4		v_vColor;
+
+void main(void)
+{
+	//vec4 vTexture = vec4(1);//texture2D(u_sTexture0, v_vTex0UV);
+	vec4 vColor = u_fColor;
+	//vec4 vColor = vec4(mod(v_vTex0UV.x, 1.0), mod(v_vTex0UV.y, 1.0), 0.0, 1.0);
+
+	float distanceFromCenter = abs(0.5 - v_vTex0UV.x);
+	float lerpSize = 0.1;
+
+#ifdef OES_standard_derivatives_enabled // simple antialias
+	float dx = dFdx(distanceFromCenter);
+	float dy = dFdy(distanceFromCenter);
+	float dl = length(vec2(dx, dy)); // fwidth?
+	lerpSize = 1.6 * dl;
+#else
+	lerpSize *= clamp(u_fWidth, 0.5, 1.5);
+#endif
+
+	const float borderStop = 0.5;
+	vColor = lerp(vColor, vec4(vec3(vColor), 0.0), interpolate(distanceFromCenter, borderStop - lerpSize, borderStop));
+
+	gl_FragColor = vColor;
+}

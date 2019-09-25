@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>3D performance test</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+</style>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="log"></div>
+</body>
+<script src="common/sdk.js"></script>
+<script src="tests/perf3d.js"></script>
+<script>
+
+var maxFps = 100;
+
+var chart = Highcharts.chart('container', 
+{
+    chart: { type: 'spline', animation: Highcharts.svg, marginRight: 10 },
+    title: { text: 'frames per second' },
+    yAxis: { title: { text: 'frames' }, max: maxFps },
+    legend: { enabled: false },
+    exporting: { enabled: false },
+    tooltip: { shared:true }
+});
+
+function pushFramerate(f)
+{
+  chart.setTitle({text: f + " fps"});
+  if (window.global.pass>=0)
+    chart.series[window.global.pass].addPoint(f);
+}
+
+function pushSeries(pass)
+{
+  chart.addSeries({name:"Pass " + pass, data:[]});
+}
+
+function pushScenario(json)
+{
+  var msg = "PASS " + json.pass + ": Total frames " + json.totalFrames + 
+    " took " + json.totalTime + " ms";
+  document.getElementById("log").innerHTML = msg + "<br>" + document.getElementById("log").innerHTML;
+}
+</script>
+</html>

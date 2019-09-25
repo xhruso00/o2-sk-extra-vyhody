@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+    <map>
+        <route>
+            <colors>
+                <object name="color.route" type="Library::CColor">
+                    <color value="0x2196F3FF"/>
+                </object>
+                <object name="color.route.border" type="Library::CColor">
+                    <color value="0x004187ff"/>
+                </object>
+                <object name="color.route.passed" type="Library::CColor">
+                    <color value="0x81C3F890"/>
+                </object>
+                <object name="color.route.passed.border" type="Library::CColor">
+                    <color value="0x3C5B7390"/>
+                </object>
+                <object name="color.route.alt" type="Library::CColor">
+                    <color value="0x32cd59FF"/>
+                </object>
+                <object name="color.route.alt.border" type="Library::CColor">
+                    <color value="0x2aad4bff"/>
+                </object>
+                <object name="color.traffic.free" type="Library::CColor">
+                    <color value="0xff8d00ff"/>
+                </object>
+                <object name="color.traffic.free.border" type="Library::CColor">
+                    <color value="0x2aad4bff"/>
+                </object>
+                <object name="color.traffic.light" type="Library::CColor">
+                    <color value="0xff8d00ff"/>
+                </object>
+                <object name="color.traffic.light.border" type="Library::CColor">
+                    <color value="0x004187ff"/>
+                </object>
+                <object name="color.traffic.hard" type="Library::CColor">
+                    <color value="0xFFA500FF"/>
+                </object>
+                <object name="color.traffic.hard.border" type="Library::CColor">
+                    <color value="0x004187ff"/>
+                </object>
+                <object name="color.traffic.closed" type="Library::CColor">
+                    <color value="0xEB1A20FF"/>
+                </object>
+                <object name="color.traffic.closed.border" type="Library::CColor">
+                    <color value="0x004187ff"/>
+                </object>
+                <object name="color.traffic.alt.free" type="Library::CColor">
+                    <color value="0xff8d00ff"/>
+                </object>
+                <object name="color.traffic.alt.free.border" type="Library::CColor">
+                    <color value="0x2aad4bff"/>
+                </object>
+                <object name="color.traffic.alt.light" type="Library::CColor">
+                    <color value="0xff8d00ff"/>
+                </object>
+                <object name="color.traffic.alt.light.border" type="Library::CColor">
+                    <color value="0x2aad4bff"/>
+                </object>
+                <object name="color.traffic.alt.hard" type="Library::CColor">
+                    <color value="0xFFA500FF"/>
+                </object>
+                <object name="color.traffic.alt.hard.border" type="Library::CColor">
+                    <color value="0x2aad4bff"/>
+                </object>
+                <object name="color.traffic.alt.closed" type="Library::CColor">
+                    <color value="0xEB1A20FF"/>
+                </object>
+                <object name="color.traffic.alt.closed.border" type="Library::CColor">
+                    <color value="0x2aad4bff"/>
+                </object>
+                <object name="intensity.wave.route" type="Library::CFloatResource">
+                    <float value="0.000000"/>
+                </object>
+                <object name="intensity.wave.traffic" type="Library::CFloatResource">
+                    <float value="0.250000"/>
+                </object>
+            </colors>
+        </route>
+        <traffic>
+            <colors>
+                <object name="color.traffic.free" type="Library::CColor">
+                    <color value="0xaaaaaaFF"/>
+                </object>
+                <object name="color.traffic.free.border" type="Library::CColor">
+                    <color value="0xaaaaaaFF"/>
+                </object>
+                <object name="color.traffic.light" type="Library::CColor">
+                    <color value="0xaaaaaaFF"/>
+                </object>
+                <object name="color.traffic.light.border" type="Library::CColor">
+                    <color value="0xaaaaaaFF"/>
+                </object>
+                <object name="color.traffic.hard" type="Library::CColor">
+                    <color value="0xaaaaaaFF"/>
+                </object>
+                <object name="color.traffic.hard.border" type="Library::CColor">
+                    <color value="0xaaaaaaFF"/>
+                </object>
+                <object name="color.traffic.closed" type="Library::CColor">
+                    <color value="0xaaaaaaFF"/>
+                </object>
+                <object name="color.traffic.closed.border" type="Library::CColor">
+                    <color value="0xaaaaaaFF"/>
+                </object>
+                <object name="color.traffic.icon.hard" type="Library::CColor">
+                    <color value="0xEB1A20FF"/>
+                </object>
+                <object name="color.traffic.icon.light" type="Library::CColor">
+                    <color value="0xff9a00ff"/>
+                </object>
+                <object name="color.traffic.icon.free" type="Library::CColor">
+                    <color value="0x00ff00ff"/>
+                </object>
+                <object name="color.traffic.icon.info" type="Library::CColor">
+                    <color value="0x0000ffff"/>
+                </object>
+                <object name="intensity.wave" type="Library::CFloatResource">
+                    <float value="0.250000"/>
+                </object>
+            </colors>
+        </traffic>
+    </map>
+</skin>

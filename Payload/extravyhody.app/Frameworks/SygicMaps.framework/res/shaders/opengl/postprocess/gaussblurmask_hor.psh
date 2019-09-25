@@ -1,0 +1,42 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	hu_sSceneTexture0;
+uniform sampler2D	u_sTexture1; // mask
+uniform vec2		hu_vDimsTexture0;
+uniform float		u_fStep;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2		v_vTex0UV;
+
+// ------- FUNCTIONS -------
+
+void main(void)
+{
+	vec4 result;
+	vec4 mask = texture2D(u_sTexture1, v_vTex0UV);
+
+	if (mask.x > 0.0)
+	{
+		float blurSize = u_fStep/hu_vDimsTexture0.x;
+
+		// blur in x (horizontal)
+		// take nine samples, with the distance blurSize between them
+		vec4 sum = texture2D(hu_sSceneTexture0, vec2(v_vTex0UV.x - 4.0*blurSize, v_vTex0UV.y)) * 0.05;
+		sum += texture2D(hu_sSceneTexture0, vec2(v_vTex0UV.x - 3.0*blurSize, v_vTex0UV.y)) * 0.09;
+		sum += texture2D(hu_sSceneTexture0, vec2(v_vTex0UV.x - 2.0*blurSize, v_vTex0UV.y)) * 0.12;
+		sum += texture2D(hu_sSceneTexture0, vec2(v_vTex0UV.x - blurSize, v_vTex0UV.y)) * 0.15;
+		sum += texture2D(hu_sSceneTexture0, vec2(v_vTex0UV.x, v_vTex0UV.y)) * 0.16;
+		sum += texture2D(hu_sSceneTexture0, vec2(v_vTex0UV.x + blurSize, v_vTex0UV.y)) * 0.15;
+		sum += texture2D(hu_sSceneTexture0, vec2(v_vTex0UV.x + 2.0*blurSize, v_vTex0UV.y)) * 0.12;
+		sum += texture2D(hu_sSceneTexture0, vec2(v_vTex0UV.x + 3.0*blurSize, v_vTex0UV.y)) * 0.09;
+		sum += texture2D(hu_sSceneTexture0, vec2(v_vTex0UV.x + 4.0*blurSize, v_vTex0UV.y)) * 0.05;
+
+		result = sum;
+	}
+	else
+	{
+		result = texture2D(hu_sSceneTexture0, v_vTex0UV);
+	}
+	
+	gl_FragColor = result;
+}

@@ -1,0 +1,13 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform float		u_fEffectsInterpolation;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying float		v_fAlpha;
+
+// ------- FUNCTIONS ------- 
+void main(void)
+{
+	vec4 vColor = v_fAlpha*vec4b2f(0x69, 0xa4, 0xd1, 0xff);
+	gl_FragColor = u_fEffectsInterpolation*vColor;
+}

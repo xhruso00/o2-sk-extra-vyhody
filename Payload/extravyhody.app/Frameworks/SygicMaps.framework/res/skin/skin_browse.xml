@@ -1,0 +1,41 @@
+<skin>
+    <map>
+        <settings>
+            <curves>
+                <object name="function.color_fall_off_r" type="C3DMapFunctionResult">
+                    <parent type="CFunctionObject">
+                        <definition>
+                            <x value="1.000000"/>
+                            <y value="1.000000"/>
+                            <z value="600.000000"/>
+                            <w value="700.000000"/>
+                        </definition>
+                    </parent>
+                    <mapvalue value="E3DMapValue::GroundMpp"/>
+                </object>
+                <object name="function.color_fall_off_g" type="C3DMapFunctionResult">
+                    <parent type="CFunctionObject">
+                        <definition>
+                            <x value="0.960000"/>
+                            <y value="1.000000"/>
+                            <z value="600.000000"/>
+                            <w value="700.000000"/>
+                        </definition>
+                    </parent>
+                    <mapvalue value="E3DMapValue::GroundMpp"/>
+                </object>
+                <object name="function.color_fall_off_b" type="C3DMapFunctionResult">
+                    <parent type="CFunctionObject">
+                        <definition>
+                            <x value="0.960000"/>
+                            <y value="1.000000"/>
+                            <z value="600.000000"/>
+                            <w value="700.000000"/>
+                        </definition>
+                    </parent>
+                    <mapvalue value="E3DMapValue::GroundMpp"/>
+                </object>
+            </curves>
+        </settings>
+    </map>
+</skin>

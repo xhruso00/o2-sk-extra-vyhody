@@ -1,0 +1,49 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	hu_sSceneTexture0;
+uniform sampler2D	u_sTexture1; // mask
+uniform vec2		hu_vDimsTexture0;
+uniform float		u_fStep;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2		v_vTex0UV;
+
+// ------- FUNCTIONS -------
+
+vec4 AvgPixels(const vec2 uv, const float stepx, const float stepy)
+{
+	vec4 sample, sample0, sample1, sample2, sample3;
+	sample = texture2D(hu_sSceneTexture0, vec2(uv.x - stepx, uv.y - stepy));
+	sample0 = texture2D(hu_sSceneTexture0, vec2(uv.x - stepx, uv.y - stepy));
+	sample1 = texture2D(hu_sSceneTexture0, vec2(uv.x + stepx, uv.y + stepy));
+	sample2 = texture2D(hu_sSceneTexture0, vec2(uv.x + stepx, uv.y - stepy));
+	sample3 = texture2D(hu_sSceneTexture0, vec2(uv.x - stepx, uv.y + stepy));
+	return (2.0*sample + sample0 + sample1 + sample2 + sample3) / 6.0;
+}
+
+void main(void)
+{
+	vec4 mask, result, result0, result1;
+	
+	mask = texture2D(u_sTexture1, v_vTex0UV);
+
+	if (mask.x > 0.0)
+	{
+		float stepx = u_fStep/hu_vDimsTexture0.x;
+		float stepy = u_fStep/hu_vDimsTexture0.y;
+		result0 = AvgPixels(v_vTex0UV, stepx, stepy);
+		
+		//stepx *= 2.0;
+		//stepy *= 2.0;
+		//result1 = AvgPixels(v_vTex0UV, stepx, stepy);
+				
+		//result = (result0 + result1)/2.0;
+		result = result0;
+	}
+	else
+	{
+		result = texture2D(hu_sSceneTexture0, v_vTex0UV);
+	}
+	
+	gl_FragColor = result;
+}

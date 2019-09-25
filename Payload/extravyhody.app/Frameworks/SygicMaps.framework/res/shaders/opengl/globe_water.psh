@@ -1,0 +1,43 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	u_tColors;
+
+uniform vec3		u_vNormalizedLightDir;
+uniform vec4		u_vSpecularColor;
+uniform float		u_fSpecularPower;
+uniform float		u_fSpecularStrength;
+uniform float		u_fEffectsInterpolation;
+
+uniform vec3		hu_vNormalizedViewDir;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec4		v_vColor;
+varying vec2		v_vTexCoord;
+varying vec3		v_vNormal;
+
+// ------- FUNCTIONS ------- 
+
+void main(void)
+{
+	vec4 vColor = texture2D(u_tColors, v_vTexCoord);
+	
+	vec3 vNormal = normalize(v_vNormal);
+
+	// Compute N.L
+	float nDotL = dot(vNormal, u_vNormalizedLightDir);
+	
+	// Compute reflection vector
+	vec3 reflection = (2.0*vNormal*nDotL) - u_vNormalizedLightDir;
+	
+	// Compute R.V
+	float rDotV = max(0.0, dot(reflection, hu_vNormalizedViewDir));
+	
+	// Compute Specular term
+	vec4 specular = u_vSpecularColor * /*vSpecular * */vec4(pow(rDotV, u_fSpecularPower));
+
+	float f = clamp(-nDotL, 0.0, 1.0);
+
+	vec4 c0 = f*(vColor + u_fSpecularStrength*specular);
+	vec4 v = lerp(vColor, c0, u_fEffectsInterpolation);
+	gl_FragColor = v;
+}

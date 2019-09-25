@@ -1,0 +1,67 @@
+{
+    "Authentication": {
+        "app_key": "sk.o2.extravyhody.sdk",
+        "app_secret": "bhKqOcx+96DwRP902tcZ+IP5lMEFqL43bxfTHcidy6zXRzuZ0khxG7mC2fB+CuutXTmj4VMp3rSkFqNOy5orYQ=="
+    },
+    "Online": {
+        "Routing": {
+            "api_key": "og4A0sXxL9InmwEpwOalIUSbL"
+        },
+        "Search": {
+            "search_url": "https://searchtest.api.sygic.com/v0/api/autocomplete",
+            "detail_url": "https://searchtest.api.sygic.com/v0/api/autocomplete/details"
+        }
+    },
+    "DriversBehavior": {
+        "enable": true
+    },
+    "Logging": [
+        {
+            "name": "global",
+            "classpath": "",
+            "appenders": [
+                {
+                    "class": "CConsoleAppender",
+                    "format": "%levshort %datetime %msg\n",
+                    "level": "debug",
+                    "time": "%FT%T%z"
+                },
+                {
+                    "class": "CScreenAppender",
+                    "format": "%levshort: %msg\n",
+                    "level": "warn"
+                },
+                {
+                    "class": "CFileAppender",
+                    "format": "%levshort %datetime %msg\n",
+                    "time": "%FT%T%z",
+                    "level": "debug",
+                    "file": "global.log",
+                    "append": false,
+                    "flush": 100
+                },
+                {
+                    "class": "CSocketAppender",
+                    "format": "%msg",
+                    "level": "trace"
+                },
+                {
+                    "class": "TelemetryAppender",
+                    "format": "%levshort %datetime %msg\n",
+                    "time": "%FT%T%z",
+                    "level": "debug",
+                    "url": "https://156.ip-51-68-191.eu:8096",
+                    "log_size": 256,
+                    "username": "o2slovakia",
+                    "password": "3FG6NtEeykBktWV66Eit6YTy"
+                },
+                {
+                    "class": "DiagnosticsAppender",
+                    "format": "%levshort %datetime %msg\n",
+                    "time": "%FT%T%z",
+                    "level": "ProcedureCall"
+                }
+            ]
+        }
+    ]
+}

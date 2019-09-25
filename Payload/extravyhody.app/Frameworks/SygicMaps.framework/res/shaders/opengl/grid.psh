@@ -1,0 +1,41 @@
+#ifdef GL_OES_standard_derivatives
+#extension GL_OES_standard_derivatives : enable
+#define OES_standard_derivatives_enabled
+#endif
+
+#preprocess
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform float		hu_fGroundDistanceInKm;
+uniform	vec4		u_vColor;
+uniform	vec4		u_vBorderColor;
+uniform vec2_hp		u_vTiles;
+uniform	float		u_fBorderSize;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2_hp		v_vTexCoord;
+varying float		v_fBlendFactor;
+
+// ------- FUNCTIONS ------- 
+
+float grid(float_hp p)
+{
+	return abs(mod(p, 2.0) - 1.0);
+}
+
+void main(void)
+{
+	float distanceFromGrid = max(grid(v_vTexCoord.s * u_vTiles.x), grid(v_vTexCoord.t * u_vTiles.y));
+#ifdef OES_standard_derivatives_enabled // simple antialias
+	float dx = dFdx(distanceFromGrid);
+	float dy = dFdy(distanceFromGrid);
+	float lerpSize = length(vec2(dx, dy));
+#else
+	float lerpSize = u_fBorderSize * 0.5;
+#endif
+
+	const float borderStop = 1.0;
+	float borderStart = borderStop - lerpSize - u_fBorderSize;
+	gl_FragColor = lerp(u_vColor, u_vBorderColor, interpolate(distanceFromGrid, borderStart, borderStart + lerpSize));
+	gl_FragColor.a *= v_fBlendFactor;
+}

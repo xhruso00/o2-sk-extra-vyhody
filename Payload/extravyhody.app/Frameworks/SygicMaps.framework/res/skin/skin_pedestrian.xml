@@ -1,0 +1,19 @@
+<skin>
+    <map>
+        <models>
+            <object name="vehicle" type="C3DMapFileModelObject">
+                <filename value="models/plane.obj"/>
+                <settings value="map/settings/vehicle.main"/>
+            </object>
+        </models>
+		<settings>
+			<object name="vehicleIndicator" type="C3DMapPositionIndicatorSettings">
+				<accuracy_indicator_visible value="true"/>
+				<indicator_visible value="true"/>
+				<accuracy_indicator_color value="map/settings/colors/color.vehicleAccuracyIndicator"/>
+				<indicator_type value="Map::EIndicatorType::MapMatched"/>
+				<indicator_rotation value="Map::EIndicatorRotation::Attitude"/>
+			</object>
+		</settings>
+    </map>
+</skin>

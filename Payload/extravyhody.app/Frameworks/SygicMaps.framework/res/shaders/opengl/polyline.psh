@@ -1,0 +1,62 @@
+#ifdef GL_OES_standard_derivatives
+#extension GL_OES_standard_derivatives : enable
+#define OES_standard_derivatives_enabled
+#endif
+
+#preprocess
+
+float roundedRectangle(vec2 pos, vec2 size, float radius, float thickness)
+{
+	float d = length(max(abs(pos), size) - size) - radius;
+	return d / thickness;
+}
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform	vec4		u_vColor;
+uniform	vec4		u_vBorderColor;
+uniform	float_hp	u_fBorderSize;
+uniform float_hp	u_fDashLength;
+uniform float_hp	u_fDashSpaceLength;
+uniform float_hp	u_fDashRadius;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2_hp		v_vTexCoord;
+
+// ------- FUNCTIONS -------
+
+void main(void)
+{
+	vec4 vTransparentBorder = vec4(u_vBorderColor.rgb, 0.0);
+
+	float_hp distanceFromCenter = abs(0.5 - v_vTexCoord.x);
+	vec4 vColor = u_vColor;
+
+#ifdef OES_standard_derivatives_enabled // simple antialias
+	float dx = dFdx(distanceFromCenter);
+	float dy = dFdy(distanceFromCenter);
+	float lerpSize = length(vec2(dx, dy));
+#else
+	float lerpSize = 0.02;
+#endif
+
+	if (u_fDashLength > 0.0)
+	{
+		const float thickness = 0.1;
+		const float halfHeight = 0.5;
+		float halfWidth = u_fDashLength * 0.5;
+		float dashCoordY = mod(v_vTexCoord.y, u_fDashLength + u_fDashSpaceLength);
+		float radiusOffset = (u_fDashRadius + thickness * 0.5);
+		vec2 rectangleSize = vec2(halfWidth - radiusOffset, halfHeight - radiusOffset);
+		float intensity = roundedRectangle(vec2((halfWidth - dashCoordY), distanceFromCenter), rectangleSize, u_fDashRadius, thickness);
+
+		gl_FragColor = mix(vColor, vTransparentBorder, intensity);
+	}
+	else
+	{
+		const float borderStop = 0.5;
+		float borderStart = borderStop - lerpSize - u_fBorderSize;
+		vColor = lerp(vColor, u_vBorderColor, interpolate(distanceFromCenter, borderStart, borderStart + lerpSize));
+		vColor = lerp(vColor, vTransparentBorder, interpolate(distanceFromCenter, borderStop - lerpSize, borderStop));
+		gl_FragColor = vColor;
+	}
+}

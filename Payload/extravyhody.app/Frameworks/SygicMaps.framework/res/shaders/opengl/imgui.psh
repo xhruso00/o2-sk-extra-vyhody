@@ -1,0 +1,14 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	u_sTexture0;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2		v_vTexCoord;
+varying vec4		v_vColor;
+
+// ------- FUNCTIONS ------- 
+
+void main(void)
+{
+	gl_FragColor = v_vColor*texture2D(u_sTexture0, v_vTexCoord);
+}

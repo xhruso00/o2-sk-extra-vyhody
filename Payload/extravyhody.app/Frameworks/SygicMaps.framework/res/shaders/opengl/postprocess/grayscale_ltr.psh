@@ -1,0 +1,22 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	hu_sSceneTexture0;
+uniform float		u_fInterpolation;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2		v_vTex0UV;
+
+// ------- FUNCTIONS ------- 
+
+void main(void)
+{
+	vec4 vTexture = texture2D(hu_sSceneTexture0, v_vTex0UV);
+	vec3 vTextureRGB = vTexture.rgb;
+	if (u_fInterpolation > v_vTex0UV.x)
+	{
+		float fGray = dot(vTextureRGB, vec3(0.3, 0.59, 0.11));
+		vTextureRGB = vec3(fGray);
+	}
+
+	gl_FragColor = vec4(vTextureRGB, vTexture.a);
+}

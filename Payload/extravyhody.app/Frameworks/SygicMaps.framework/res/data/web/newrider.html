@@ -1,0 +1,233 @@
+<html>
+<head>
+<title>Newrider</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html { height: 100%; width:100%}
+body { width:100%; height: 100%; margin: 0; padding: 0; font-family:arial; font-size:15px; }
+#map-canvas { width:100%; height: 100%; padding: 0px; margin: 0px; z-index:2}
+#car {
+position:absolute; width:40px; height:40px; left:50%; top:50%; margin-left:-20px; margin-top:-20px; z-index:6; transform:rotate(0deg);
+background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAmdQTFRFAAAAAAAtAAAfAAAcAAAdAAAjZzEXm0EWSigYAAAeAAgbAA0aAAgaAAEdBAsbOyMYaTIXhzsWnUIWq0YVsUgVrUcVqEUVo0QVnUIVlT8Wjj0WiDsWhDoWhDoWhToWhToWhToW1FMUkj8WfTgWgDkWgjkWoEMVtkoVuksVt0oVrEcVkj4WYi8XFBQaNiIYhDoWr0cVy1AU4VcU2lUUnkIWOCIYejcW4VcURykaCxYbnkIVFRodBREYsUgVbDQZPyUYvEwVkj4WxE4VqEYWyE8UvUwVylAUyVAUnkIWNSIYnEIWq0YVkT4WYS8Xm0EWAAwa8FwT+F4T/WAT/2AT/mAT8lwT1VQVxE8WvEwVvEwWv00WwU4Ww04Wwk4Wu0wWuEsWy1AV61oT71sT7VsU9F0T/2ET3FUT3FYVbzcdRC0iPCsiMCIbPCohQCwiQi0iRS0hSC4hUTAfZTUdjD8Zt0oWv04XpkcYvU0X4lgV51oV6FoV6VoV6VoU810U/GAT5lkU+V8Tx00SlD0T5VgT0lMVlkIZjUAbhT4bfjkYhj4bmUMaqkgYwE4X2FUV71sUZjUeSS4hPSsiOSojPysikkEa914T9l4U0VETu0oUxU4V5FkV7lwUbzYa3VYVmUMZezscYDMeTS4fnEQZaTYdNiojOisjOysjQiwhw08W8l0U21YVvUsTqUQSzVAT71wVxFAX61oUZzYdNyojOCojcDgd+V4TZDUegTwb/F8T9F0U01MV9V4U3lcVskoXOysicTgdWzIf5loV3FcWgz0bSi4g71wUbDcd1FQVhj4a7FoTOyoht0sWAAAAHlvwuQAAAFB0Uk5TAAEFCQYDaN8pAw0QDgYII0p0mLC6tKmcjoBzaWRjZGKW+5tkZ22fwsjEsodDChZ1ueP59KgodPvJJ7OlCtXxTemg9dj88/7+sxaYsodD3hA10QTWAAAAAWJLR0QAiAUdSAAAAYVJREFUOMtjYBgFgxowMjEzs7Ai+GzsHCCKk4ubhxcuyMcvICgkLCIiKiYuISklLSMrIyevoKikrKKiqqauoamlraMLUqanb2BoFBAYFBwSEhoWHhEZFR0TGxUXn5AYEJCUHBgSHByUYmxiClRoZh6UmhocnJgWmJ6RmZWdk5uXX1BYVFwSVlpWXlFZVV1TW5dab2HJwGDVEBISnBrU2NTc0trW3tHZ1tXd09tX3j9h4qTJU6ZOq50+Y+as2XOsbRhsg0KC586bv2DhohCgwUCQCgRTFy9ZumzZ0uUrVlauWr1m7br1dvYMDsHBGzZu2jxpyZatITAQnLJt8zIg2Lx9x46dVWG7pu3e48jglJq6dx9IcD+mwkkHkoFWBO2uPnjImcElNejwZhwKlx6ZmwrihjQcdWVwS516DKfC/OOpEJFUd+IVEm010Z4hOniIDnAP5Cg8gScKoYniJDRRnMKZKDyRk9kKWDI7jZnMIAnXC3fC9fbx1cWTFfygWcEfKSuMgkEJACHcNSOTRRP7AAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE0LTA4LTEzVDEzOjIwOjA5KzAyOjAwxi8X2gAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNC0wOC0xM1QxMzoyMDowOSswMjowMLdyr2YAAAAASUVORK5CYII=)
+}
+#debug {
+position:absolute; width:40%; height:50%; right:8px; top:8px; background:rgba(220, 220, 220, 0.5); font-family:arial; 
+font-size:12px;
+white-space: pre;
+z-index:7; 
+}
+</style>
+</head>
+<body>
+<div id="map-canvas"/></div>
+<img id="car">
+<div id="debug" style="display:none;"></div>
+</body>
+<script src="common/sdk.js"></script>
+<script src="common/leafletmap.js"></script>
+<script src="common/googlemap.js"></script>
+<script src="common/overlays.js"></script>
+<script src="common/popup.js"></script>
+<script>
+// google maps
+//var map = new googleMap();
+// leaflet tomtop maps
+var map = new leafletMap();
+
+var route = null;
+var connected = false;
+
+function setFavicon(connected)
+{
+    var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    if (connected)
+      link.href = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABMlBMVEUAAAA4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w4q0w5q006q006rE48rE9Br1RCr1VFsFhGsFhHsVpKslxKsl1YuGlfu29gu3BswXuCyo6Cyo+Fy5GR0JyS0Z2a1KSa1KWj2Kyn2rCs3LSs3LXA5MbB5cfD5cnG58zH583J6M7O6tPP6tTV7dnW7drX7tvd8ODj8+bk9Ofl9Ofn9Ons9+7v+PHx+fP5/Pr6/fv8/fz8/vz+/v7///8/PdDpAAAAMnRSTlMAAAIEBgoSFBgaHiImKiwuMkRKTE5QWlxeYnR6iamrsbnBxcfN09Xd3+Pr7/P19/n7/WDZRzcAAAFsSURBVBgZdcEJP1RhGMbh28yxc459HYwtjGX4l6UUTZmKIpStCOX9/l+h50zz42xdl6K8oG9osKcjp0yNw8UVahbH+/NK8kZKRMwNNCjGnyWh2KKI3iVSFnw96i0Tel09vflzf324t0mo1Kk6fwmzdXDn6m6r65j5JtV4s5idKxfxbRszppoRzM4vF3P5CtMt01gCtq5cwglmWmYYc+BS3mO6JBWBN3cu5ccLoCB5K8AHl6ECzEgB5tRl2AfKefVhblyGY0ybhjC/XYYLTKBBzL3LcIbx1YO5dhmOMK3qwBy6DB+B5Zxyi8Cey/AWmJQ0DmzeupRzzKikfkzVJT1UgLV2Sfk5YP27S/iCmVBoALN96WK+bgCrgUINRczLE/fk4fMGpqB/WhYIvfvp6s4rhKY81fklQs8r+8cXZ0efdql51qxHnfOkTDUrommMuNWCp7juaZ6sTQRK6yrMlDHLk6Pt+o98W+C35hT1F8iz2ZgW9mIoAAAAAElFTkSuQmCC" 
+    else
+      link.href = "data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA/n8AAP5/AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA";
+    document.getElementsByTagName('head')[0].appendChild(link);
+}
+
+// sdk
+//Sdk.EnableEcho();
+
+Sdk.on("sdkConnected", () => 
+{ 
+  map.clearOverlays();
+
+  connected = true;
+  setFavicon(true);
+
+  Sdk.Route.Get()
+    .then( (arr, id) => { 
+       if (arr)
+         map.setCenter(new google.maps.LatLng(arr[1]/100000, arr[0]/100000));
+    } )
+    .catch( () => 0);
+});                                                 
+
+Sdk.on("sdkDisconnected", () => 
+{ 
+  connected = false;
+
+  setFavicon(false); 
+  tryConnect(); 
+});
+
+Sdk.on("routeGeometry", (geom) => 
+{
+  if (geom)
+    onRoute(geom); 
+});
+
+Sdk.on("routeAvailable", () => 
+{
+  setTimeout( () =>
+  {
+    Sdk.Route.Get()
+      .then( (arr, id) => onRoute(arr) )
+      .catch( () => 0);
+  }, 500);
+});
+
+function tryConnect()
+{
+  Sdk.Connect().catch( () => 0 );
+}
+
+function mapLoaded()
+{
+  tryConnect();
+}
+
+// overlays
+function onRoute(coords)
+{
+  if (route) 
+    map.removeOverlay(route);
+
+  route = map.drawPoly(coords, "#4040ff", 0.4);
+}
+
+function onTraffic(coords)
+{
+   return map.drawPoly(coords, "#ff0000", 0.5);
+}
+
+// car movement
+var keys = {};
+var cKey = {left:37, right:39, up:38, down:40};
+
+document.addEventListener("keydown", (e) => keys[e.keyCode] = 1, false);
+document.addEventListener("keyup", (e) => keys[e.keyCode] = 0, false);
+
+var car = {rotation:0, spd:0}
+var lastUser = 0;
+var speedconstant = 0.02;
+var follow = true;
+
+setInterval( ()=>
+{
+  if ( keys[cKey.left] )
+    car.rotation -= 5;
+  if ( keys[cKey.right] )
+    car.rotation += 5;
+
+  if (car.rotation < 0)
+    car.rotation += 360;
+  if (car.rotation >= 360)
+    car.rotation -= 360;
+
+  if ( keys[cKey.up] )
+  {
+    car.spd += 1;
+    lastUser = (new Date).getTime();
+  }
+  else
+  if ( keys[cKey.down] )
+  {
+    lastUser = (new Date).getTime();
+    car.spd *= 0.95;
+    car.spd -= 1;
+  } else
+    car.spd *= 0.95;
+
+  car.spd *= 0.99;
+
+  document.getElementById("car").style.transform = "rotate("+(car.rotation.toFixed(1)-90)+"deg)";
+  document.getElementById("car").style.webkitTransform = "rotate("+(car.rotation.toFixed(1)-90)+"deg)";
+
+  if ( car.spd < 0.01 )
+    return;
+
+  var spdmul = 1/Math.pow(2, map.getZoom()-20)*speedconstant;
+
+  var pos = map.getCenter();
+  pos = google.maps.geometry.spherical.computeOffset(pos, car.spd * spdmul, car.rotation);
+  map.setCenter(pos);
+}, 50);
+
+function sendPosition(pos, spd, rot)
+{
+  if (!pos)
+    pos = map.getCenter();
+  if (!spd)
+    spd = 0;
+  if (!rot)
+    rot = 0;
+
+  Sdk.Position.SetAll(pos.lat(), pos.lng(), spd.toFixed(1), rot);
+}
+
+// coord sync
+var lastPos = null, lastTime = 0, lastRemotePos = [];
+setInterval( ()=>
+{
+  var curPos = map.getCenter();
+  var curTime = (new Date()).getTime();
+  if (lastPos)
+  {
+    var passed = google.maps.geometry.spherical.computeDistanceBetween(lastPos, curPos);
+    var spd = passed*3600/(curTime - lastTime);
+    if (connected)
+    {
+      if ((new Date()).getTime() - lastUser < 10000)
+      {
+        lastRemotePos = [];
+        // na iOSe mame problem s prijimanim viacerych naraz poslanych buffrov!
+        sendPosition(curPos, spd, car.rotation);
+        /*
+        Sdk.Position.SetSpeed(spd.toFixed(1))
+          .then( () => Sdk.Position.SetCourse(car.rotation))
+          .then( () => Sdk.Position.SetPosition(curPos.lat(), curPos.lng()));
+         */
+      } else if (follow)
+      {
+        Sdk.MapView.GetPosition()
+          .then( (json) => 
+            { 
+              var pos = new google.maps.LatLng(json.lat, json.lon);
+
+              lastRemotePos.push(pos);
+              if (lastRemotePos.length > 3)
+                lastRemotePos.shift();
+
+              var dist = google.maps.geometry.spherical.computeDistanceBetween(lastRemotePos[0], lastRemotePos[lastRemotePos.length-1]);
+              if (dist > 5 && lastRemotePos.length > 2)
+              {
+                car.rotation = google.maps.geometry.spherical.computeHeading(lastRemotePos[0], lastRemotePos[lastRemotePos.length-1]);
+              }
+              map.setCenter(pos);
+            } )
+          .catch( () => 0 );   
+      }
+    }
+  }
+
+  lastPos = curPos;
+  lastTime = curTime;
+}, 1000);
+</script>
+</html>

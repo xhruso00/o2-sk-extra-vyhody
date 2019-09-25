@@ -1,0 +1,31 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	u_sTexture0; // Earth lights
+
+uniform vec4		u_vAmbientColor;
+
+uniform vec3		u_vNormalizedLightDir;
+uniform float		u_fEffectsInterpolation;
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2		v_vTex0UV;
+varying vec3		v_vNormal;
+
+// ------- FUNCTIONS ------- 
+
+void main(void)
+{
+	vec4 colColor = u_vAmbientColor;
+		
+	vec3 vNormal = normalize(v_vNormal);
+	float nDotL = dot(vNormal, u_vNormalizedLightDir); // [0.0, 1.0] away from sun, [-1.0, 0.0] toward sun
+	float f = saturate(-nDotL); // 0.0 away from sun, [1.0, 0.0] toward sun
+		
+	vec4 colEarthLights = texture2D(u_sTexture0, v_vTex0UV);
+
+	float fLights = saturate(1.0 - f*12.0 + 0.1);
+	colEarthLights *= 0.5*u_fEffectsInterpolation*fLights;
+	vec4 c0 = lerp(colColor, colEarthLights, 1.0 - f - 0.04);
+
+	gl_FragColor = lerp(colColor, c0, u_fEffectsInterpolation);
+}

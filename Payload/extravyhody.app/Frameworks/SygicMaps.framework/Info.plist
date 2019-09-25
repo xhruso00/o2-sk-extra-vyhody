@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>SygicMaps</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.sygic.sdk</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>SygicMaps</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleShortVersionString</key>
+	<string>12.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>12.0.2</string>
+	<key>NSPrincipalClass</key>
+	<string></string>
+	<key>MinimumOSVersion</key>
+	<string>10.0</string>
+	<key>SygicFullVersionString</key>
+	<string>12.0.2</string>
+	<key>SygicGitCommitHash</key>
+	<string>32114b5f35edb06e95f07ea0826930c56879415b</string>
+	<key>SygicBuildNumber</key>
+	<string>72</string>
+</dict>
+</plist>

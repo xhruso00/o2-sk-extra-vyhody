@@ -1,0 +1,29 @@
+
+// ------- UNIFORMS (SHADER CONSTS) -------
+uniform sampler2D	hu_sSceneTexture0;
+//uniform vec2		hu_vDimsTexture0;
+uniform vec2		u_vStep;
+
+
+// ------- INTERPOLATORS (SHADER INPUTS) -------
+varying vec2		v_vTex0UV;
+
+// ------- FUNCTIONS ------- 
+
+void main(void)
+{
+	vec4 sample0, sample1, sample2, sample3;
+	
+	//float stepx = 1.0/hu_vDimsTexture0.x;
+	//float stepy = 1.0/hu_vDimsTexture0.y;
+
+	float stepx = u_vStep.x;
+	float stepy = u_vStep.y;
+
+	sample0 = texture2D(hu_sSceneTexture0, vec2(v_vTex0UV.x - stepx, v_vTex0UV.y - stepy));
+	sample1 = texture2D(hu_sSceneTexture0, vec2(v_vTex0UV.x + stepx, v_vTex0UV.y + stepy));
+	sample2 = texture2D(hu_sSceneTexture0, vec2(v_vTex0UV.x + stepx, v_vTex0UV.y - stepy));
+	sample3 = texture2D(hu_sSceneTexture0, vec2(v_vTex0UV.x - stepx, v_vTex0UV.y + stepy));
+	
+	gl_FragColor = (sample0 + sample1 + sample2 + sample3) / 4.0;
+}

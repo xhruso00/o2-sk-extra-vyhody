@@ -1,0 +1,14 @@
+{
+    "Authentication": {
+        "app_key": "sk.o2.extravyhody.sdk",
+        "app_secret": "bhKqOcx+96DwRP902tcZ+IP5lMEFqL43bxfTHcidy6zXRzuZ0khxG7mC2fB+CuutXTmj4VMp3rSkFqNOy5orYQ=="
+    },
+    "Online": {
+        "Routing": {
+            "api_key": "og4A0sXxL9InmwEpwOalIUSbL"
+        }
+    },
+    "DriversBehavior": {
+        "enable": true
+    }
+}

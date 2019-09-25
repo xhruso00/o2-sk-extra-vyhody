@@ -1,0 +1,165 @@
+<skin>
+	<map>
+		<pois>
+			<groups>
+				<object name="Extensions" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+				<object name="FourSquare" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+				<object name="LocalSearch" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+				<object name="CustomPois" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+				<object name="Friends" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+				<object name="Photos" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+				<object name="Food_and_Drink" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+				<object name="Accommodation" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+				<object name="Shopping" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+				<object name="Transportation" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+				<object name="Tourism" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+				<object name="Social_Life" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+				<object name="Services_and_Education" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+				<object name="Sport" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+				<object name="Vehicle_Services" type="Map::CPoiGroup">
+					<priority value="9" />
+					<icon value="U+E203" />
+					<color value="0x3a3a3aff" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="true" />
+				</object>
+				<object name="Emergency" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+				<object name="Guides" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+				<object name="Parking" type="Map::CPoiGroup">
+					<priority value="4" />
+					<icon value="U+E31E" />
+					<color value="0x3370d1ff" />
+					<zoom_level_max value="15.3" />
+					<show_without_text value="true" />
+				</object>
+				<object name="Petrol_Station" type="Map::CPoiGroup">
+					<priority value="5" />
+					<icon value="U+E31B" />
+					<color value="0x3a3a3aff" />
+					<zoom_level_max value="12.7" />
+					<show_without_text value="true" />
+				</object>
+				<object name="BankATM" type="Map::CPoiGroup">
+					<priority value="0" />
+					<icon value="" />
+					<color value="" />
+					<zoom_level_max value="16.4" />
+					<show_without_text value="false" />
+					<enabled value="false" />
+				</object>
+			</groups>
+		</pois>
+	</map>
+</skin>
