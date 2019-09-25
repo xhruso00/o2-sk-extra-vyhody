@@ -4,7 +4,7 @@ Class dump of iOS app o2 extra vyhody
 
 To record a new navigation route (obtain own cookie and bearer token):
 ```
-curl -H 'Host: api.extravyhody.o2.sk' -H 'Content-Type: application/json' -H 'redacted' -H 'User-Agent: extravyhody/3 CFNetwork/978.0.7 Darwin/18.7.0' -H 'Accept: */*' -H 'Accept-Language: en-us' -H 'Authorization: Bearer REDACTED' --data-binary '{
+curl -H 'Host: api.extravyhody.o2.sk' -H 'Content-Type: application/json' -H 'Cookie:redacted' -H 'User-Agent: extravyhody/3 CFNetwork/978.0.7 Darwin/18.7.0' -H 'Accept: */*' -H 'Accept-Language: en-us' -H 'Authorization: Bearer REDACTED' --data-binary '{
   "street" : "",
   "city" : "",
   "score" : 100,
